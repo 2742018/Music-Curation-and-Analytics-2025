@@ -1,4 +1,5 @@
 
 # \[2742018_Music Curation and Analytics_2025\]
 <!-- Version 1.0 -->
-\[Enter your responses to Week 1, tasks 2 and 3 here\]
+\2742018_Music Curation and Analytics_2025\
+\[Week 1 Response:\]
