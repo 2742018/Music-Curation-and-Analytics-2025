@@ -1,4 +1,4 @@
 
-# \2742018_Music Curation and Analytics_2025\
-<!-- Version 1.0 -->
-\Week 1 Response:\
+# 2742018_Music Curation and Analytics_2025
+<!-- WEEK 1 -->
+Week 1 Response:
