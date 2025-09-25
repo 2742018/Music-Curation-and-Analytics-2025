@@ -1,13 +1,30 @@
 
 # 2742018_Music Curation and Analytics_2025
+
 <!-- WEEK 1 -->
 Week 1 Response:
 
-Based on your own experience, what do you think are some challenges to working with music and music-related data (perhaps related to access, curation, distribution, etc.)? 
+Theme: "The Music of Koji Kondo for The Legend of Zelda (1986-1998)"
 
-How does your selected theme display some of these challenges? 
+Notated Data: Sheet music books are commercially published. For earlier 8-bit games, the data can be represented as MIDI files or tracker module files, which are essentially code-based scores.
 
-Describe the current manifestations of data relating to your selected theme, discussing how it is presently curated (collected and gathered) and how it is presented, described, and analysed.
+Acoustic Data: Original soundtracks (OSTs) are widely available. You can also find recordings of symphonic arrangements ("The Legend of Zelda: Symphony of the Goddesses").
+
+Descriptive Data: Interviews with the composer, analysis of how the music functions interactively within the game, and fan-created wikis that meticulously catalog musical themes and their associations.
+
+
+1) Based on your own experience, what do you think are some challenges to working with music and music-related data (perhaps related to access, curation, distribution, etc.)? 
+
+- Access and copyright: 
+- The Ephemeral and Interactive Nature of the Data:
+- Data Curation and Standarization:
+- The "Derivative Works" Ecosystem:
+
+2) How does your selected theme display some of these challenges?
+
+  - Copyright Manifestation:
+
+3) Describe the current manifestations of data relating to your selected theme, discussing how it is presently curated (collected and gathered) and how it is presented, described, and analysed.
 
 
 
