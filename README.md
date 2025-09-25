@@ -2,9 +2,9 @@
 # 2742018_Music Curation and Analytics_2025
 
 <!-- WEEK 1 -->
-##Week 1 Response:
+## Week 1 Response:
 
-###Task 1 - Identifying a Theme:
+### Task 1 - Identifying a Theme:
 
 Theme: "The Music of Koji Kondo for The Legend of Zelda (1986-1998)"
 
@@ -15,7 +15,7 @@ Acoustic Data: Original soundtracks (OSTs) are widely available. You can also fi
 Descriptive Data: Interviews with the composer, analysis of how the music functions interactively within the game, and fan-created wikis that meticulously catalog musical themes and their associations.
 
 
-###Task 2:
+### Task 2:
 
 1) Based on your own experience, what do you think are some challenges to working with music and music-related data (perhaps related to access, curation, distribution, etc.)? 
 
