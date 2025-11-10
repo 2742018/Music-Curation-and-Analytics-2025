@@ -115,6 +115,7 @@ nav {
                 url('') center center/cover no-repeat;
     height: 80vh;
     width: 100vw;
+	height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -177,7 +178,13 @@ nav {
             font-size: 2rem;
             margin-bottom: 20px;
         }
-		
+     
+		h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+			font-family: 'Montserrat', sans-serif;
+
+        }		
         p, ul {
             font-size: 1.2rem;
             margin-bottom: 20px;
@@ -291,40 +298,142 @@ nav {
 
   <div class="section">
     <h2>Task 1: Identifying a Theme for the Dataset</h2>
+
+	<h3>Theme: Koji Kondo’s music for The Legend of Zelda series.</h3>
+	  
     <p>
-      The selected theme for this dataset is <strong>Koji Kondo’s compositions for The Legend of Zelda video game series</strong>.
-      This theme provides a cohesive focus on one composer’s body of work across multiple decades, game consoles, and stylistic evolutions.
-      It allows analysis of melody, harmony, rhythm, instrumentation, and adaptive scoring techniques within a consistent creative framework.
+    	For my dataset, I’ve chosen to focus on <strong>Koji Kondo’s compositions for The Legend of Zelda video game series</strong>.
+	</p>
+	<p>
+		This theme feels personally meaningful to me because I have always been drawn to the emotional impact and atmosphere that Kondo’s music creates. His melodies have shaped how many players experience the Zelda universe, blending nostalgia, adventure, and wonder.
     </p>
+   <p>
+		What makes this theme particularly intriguing for data work is its intertwining of music, technology, and storytelling. The series, spanning almost four decades and multiple gaming systems — from the original NES to the Nintendo Switch — demonstrates a fascinating evolution of musical ideas alongside technological advances. Analysing melody, harmony, rhythm, and instrumentation within this consistent creative framework allows me to study the intricate ways game music adapts to changing hardware while preserving its signature sound.   
+   </p>
+   <p>	  
+	(For background on Koji Kondo and his Zelda credits, see the <a href="https://zelda.fandom.com/wiki/Koji_Kondo" target="_blank">Zelda Wiki</a> and <a href="https://vgmdb.net/artist/190" target="_blank">VGMdb </a> entries.)
+    </p>	  
   </div>
 
   <div class="section">
-    <h2>Task 2: Data Types – Musical Scores, Metadata, and Audio Recordings</h2>
-    <p>
-      This theme enables the gathering of three key data types:
-    </p>
-    <ul>
-      <li><strong>Musical Scores:</strong> Transcriptions of iconic tracks such as “Overworld Theme” and “Zelda’s Lullaby.”</li>
-      <li><strong>Metadata:</strong> Information on release dates, instrumentation, and game contexts sourced from soundtrack archives and fan databases.</li>
-      <li><strong>Audio Recordings:</strong> Original game sound files, orchestral re-recordings, and official soundtrack releases available through platforms like YouTube and Spotify.</li>
-    </ul>
+  <h2>Task 2: Data Types – Musical Scores, Metadata, and Audio Recordings</h2>
+  <p>
+	To explore the music of Koji Kondo within The Legend of Zelda series, three categories of data will be collected and examined: <strong>musical scores (notated data)</strong>, <strong>metadata (descriptive data)</strong>, and <Strong>audio recordings (acoustic data)</Strong>. Together, these sources will provide a balanced framework of Kondo’s compositional practice, enabling both technical and contextual analysis.
+  </p>
+
+	  <!-- 1. Musical Scores -->
+  <h3>1. Musical Scores — Notated Data</h3>
+  <p>
+    Represent the symbolic layer of Kondo’s music, enabling the study of melody, harmony, rhythm, and form.
+  </p>
+
+  <p><strong>Primary sources:</strong></p>
+  <ul>
+    <li>Fan-transcribed arrangements and piano reductions available on 
+      <a href="https://musescore.com/" target="_blank">MuseScore</a> and 
+      <a href="https://www.musicnotes.com/" target="_blank">Musicnotes</a>.
+    </li>
+    <li>Selected official publications, such as 
+      <em>The Legend of Zelda™ Series for Piano</em> (Nintendo).
+    </li>
+    <li>Typical examples include <em>“Overworld Theme,” “Zelda’s Lullaby,”</em> and 
+      <em>“Gerudo Valley.”</em></li>
+  </ul>
+
+  <p><strong>Notes on access:</strong></p>
+  <ul>
+    <li>Most transcriptions are fan-made rather than officially released.</li>
+    <li>Accuracy and formatting vary across versions, but these resources remain valuable for harmonic and motivic analysis.</li>
+  </ul>
+
+  <!-- 2. Metadata -->
+  <h3>2. Metadata — Descriptive Data</h3>
+  <p>
+    Provides contextual and bibliographic information about each piece or recording.
+  </p>
+
+  <p><strong>Includes fields such as:</strong></p>
+  <ul>
+    <li>Track title, game title, and release year</li>
+    <li>Instrumentation, composer/arranger credits, genre, duration, and publisher</li>
+  </ul>
+
+  <p><strong>Primary sources:</strong></p>
+  <ul>
+    <li><a href="https://vgmdb.net/" target="_blank">Video Game Music Database (VGMdb)</a> — comprehensive release metadata and credits.</li>
+    <li><a href="https://zelda.fandom.com/wiki/" target="_blank">Zelda Wiki</a> — contextual data linking themes to specific in-game scenes.</li>
+    <li>Streaming platforms such as <strong>Spotify</strong>, <strong>Apple Music</strong>, and <strong>YouTube Music</strong> — standardized metadata for commercial releases.</li>
+  </ul>
+
+  <p><strong>Analytical use:</strong></p>
+  <ul>
+    <li>Cross-referencing these databases helps identify naming inconsistencies and version differences.</li>
+    <li>Metadata comparison also highlights how game music is described across official and community platforms.</li>
+  </ul>
+
+  <!-- 3. Audio Recordings -->
+  <h3>3. Audio Recordings — Acoustic Data</h3>
+  <p>
+    Capture the sonic realisation of Kondo’s compositions in both digital and live performance contexts.
+  </p>
+
+  <p><strong>Primary sources:</strong></p>
+  <ul>
+    <li>Official soundtrack releases on <strong>Spotify</strong>, <strong>Apple Music</strong>, and physical media (CDs, vinyl).</li>
+    <li>Game-audio archives such as 
+      <a href="https://downloads.khinsider.com/" target="_blank">KHInsider</a> 
+      for original in-game sound files.
+    </li>
+    <li>Orchestral and arranged recordings, e.g., 
+      <em>The Legend of Zelda: Symphony of the Goddesses</em>.</li>
+    <li>Fan-generated materials such as remixes, covers, and live recordings on 
+      <strong>YouTube</strong> and <strong>SoundCloud</strong>.</li>
+  </ul>
+
+  <p><strong>Research value:</strong></p>
+  <ul>
+    <li>Enables comparison between original 8-bit or 16-bit renditions and modern orchestral interpretations.</li>
+    <li>Illustrates the evolution of audio technology and performance practice in game music.</li>
+  </ul>
   </div>
 
+	
   <div class="section">
-    <h2>Task 3: Challenges in Working with Music Data</h2>
-    <p>
-      Working with music-related data presents several challenges, such as accessibility to copyrighted materials, inconsistent metadata standards, and limited availability of clean, analyzable files.
-      In the case of Koji Kondo’s Zelda compositions, these challenges appear in the following ways:
-    </p>
-    <ul>
-      <li>Difficulty obtaining official musical scores due to intellectual property restrictions.</li>
-      <li>Variation in metadata between fan transcriptions, soundtrack releases, and game versions.</li>
-      <li>Audio recordings often exist in compressed game formats or mixed versions that complicate frequency and timbre analysis.</li>
-    </ul>
-    <p>
-      Currently, data related to this theme is curated across fan-driven archives, video game music databases, and official Nintendo releases.
-      Each presents the material differently — from sheet music and remastered tracks to metadata tagging systems — showing both the richness and fragmentation of digital music data ecosystems.
-    </p>
+  <h2>Task 3: Challenges in Working with Music and Music-Related Data</h2>
+
+  <p>
+	Working with music-related data presents a range of challenges that relate to access, copyright, data quality, and standardisation. In the case of <strong>Koji Kondo’s compositions for The Legend of Zelda series</strong>, these challenges become particularly evident due to the hybrid nature of video game music as both a commercial product and a cultural artefact. The following section outlines the major obstacles encountered in collecting, curating, and analysing this data, supported by examples and evidence from relevant sources..
+  </p>
+
+  <h3>1. Copyright and Access Restrictions</h3>
+  <p>
+    One of the most significant barriers to working with music data is copyright. As Kondo’s work is owned by Nintendo, access to official scores and high-quality audio recordings is tightly controlled. This limits researchers and fans to unofficial or secondary sources such as fan-made transcriptions or community-uploaded audio files. These materials are valuable for preservation and analysis, but they lack the authority and consistency of officially sanctioned releases. For example, while <a href="https://www.nintendo.com/us/whatsnew/nintendo-and-laced-records-announce-the-legend-of-zelda-breath-of-the-wild-vinyl-soundtrack-collection/?srsltid=AfmBOordcIVC90HEMSW0xsn0xWDmQE_k4HZ3BqhgEITw0xWVYrV6csGo&utm_source=chatgpt.com" target="_blank">Nintendo</a> has recently begun issuing official soundtrack collections and vinyl releases, these are limited in scope and availability, reinforcing the difficulty of obtaining comprehensive primary data.
+  </p>
+
+  <h3>2. Fragmented and Inconsistent Metadata </h3>
+  <p>
+    Another challenge is the lack of metadata standardisation across different platforms and archives. Kondo's music appears on a variety of sites — such as VGMdb, Zelda Wiki, and fan repositories — each of which uses slightly different naming conventions and data structures. For example, a single track might appear as “Main Theme,” “Overworld Theme,” or “Hyrule Field Theme”, depending on the source. Such inconsistencies complicate efforts to catalogue or compare works across multiple datasets. This fragmentation highlights the absence of a central, authoritative database for video game music and demonstrates the need for more unified metadata frameworks.
+  </p>
+
+  <h3>3. Authenticity and Availability of Notated Data</h3>
+  <p>
+	Obtaining accurate musical scores for analysis is also difficult. Unlike classical or commercial pop music, video game scores are rarely published by the composer or studio. Most notated materials are community-produced, often relying on audio transcription rather than access to original sheet music. While platforms like MuseScore host hundreds of Zelda arrangements, these vary widely in quality and fidelity to Kondo’s original compositions. This suggests that when researching, there is a need to balance accessibility with accuracy, and cross-referencing multiple fan versions to approximate a reliable representation of the music.
+  </p>
+
+  <h3>4. Audio Format and Analytical Limitations</h3>
+  <p>
+	The technical nature of video game sound also introduces analytical constraints. Early Zelda titles used limited 8-bit and 16-bit sound chips, while later games employ orchestral recordings and dynamic, adaptive scores. Audio extracted from game files is often stored in proprietary or compressed formats, which require conversion and can degrade sound quality. Such transformations make detailed timbral or frequency analysis less precise. Moreover, audio found in fan archives may have been edited, normalised, or looped, altering its original structure.
+  </p>
+
+  <h3>5. Decentralised Presentation and Community Curation</h3>
+  <p>
+	The music in Zelda exemplifies both the richness and fragmentation of digital music ecosystems. The data exists across diverse formats and platforms: official soundtrack releases, fan websites, YouTube remixes, orchestral concert recordings, and academic studies. While this community-driven activity ensures cultural preservation and accessibility, it complicates data provenance and reproducibility. Each platform has its own methods of cataloguing, annotating, and presenting material, resulting in a mosaic of overlapping but inconsistent data sources.
+  </p>
+	  
+  <p>
+	Hence, Koji Kondo’s Zelda music provides a valuable yet complex case study in the challenges of digital music curation and analysis. Copyright restrictions limit direct access to primary materials, while fragmented metadata and inconsistent notational data complicate systematic study. Despite these limitations, the widespread community engagement with this music — through fan archives, online transcriptions, and live performances — demonstrates both the enduring cultural impact of Kondo’s work and the potential for collaborative, grassroots preservation in the absence of centralised official archives.
+  </p>
+	  
   </div>
 </section>
 
