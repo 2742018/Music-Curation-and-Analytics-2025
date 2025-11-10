@@ -11,31 +11,30 @@
     <style>
        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Playfair+Display:wght@700&display=swap');
 	   
+       /* General Styles */
         body {
             margin: 0;
             padding: 0;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            overflow-x: hidden;
             font-family: 'Helvetica', sans-serif;
             background-color: #f4f4f4;
             color: #333;
-			overflow-x: hidden;
+			line-height: 1.6;
+
         }
-        
-		header {
+
+        /* Header Styles */
+        header {
             background-color: #1A2B4C;
             color: white;
             padding: 20px;
             text-align: center;
-            position: relative;
         }
 
-        header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            margin: 0;
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-       nav {
+        nav {
             margin-top: 15px;
         }
 
@@ -50,6 +49,7 @@
         nav a:hover {
             color: #FF6F61;
         }
+		
 
 nav {
     display: flex;
@@ -66,7 +66,7 @@ nav {
 .submenu {
     display: none;
     position: absolute;
-    top: 100%; /* Directly below the parent item */
+    top: 100%; 
     left: 0;
     background-color: #1A2B4C;
     padding: 10px 0;
@@ -85,7 +85,7 @@ nav {
     display: block;
     color: white;
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 5px 10px;
     font-family: 'Montserrat', sans-serif;
     transition: background-color 0.3s;
 }
@@ -107,78 +107,111 @@ nav {
     margin-top: -1px;
 }
 
-        .hero {
-            background: linear-gradient(rgba(26, 43, 76, 0.7), rgba(26, 43, 76, 0.7)), 
-            url('images/Screenshot 2024-10-08 225027.png') center/cover no-repeat;
-            height: 75vh;
-            padding: 100px 20px;
-            text-align: center;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
 
+        /* Hero Section */
+.hero {
+    background: linear-gradient(135deg, rgba(249, 216, 184, 0.8), rgba(224, 213, 193, 0.8), rgba(191, 193, 178, 0.8)),
+                url('images/Screenshot 2024-10-10 173726.png') center center/cover no-repeat;
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    box-sizing: border-box;
+    background-size: cover;
+}
 
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 4rem; 
-            margin-bottom: 20px;
-			z-index: 1;
+            font-size: 3.5rem;
+			color: Black;
         }
 
         .hero p {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.5rem;
-            max-width: 700px;
-            margin: 20px;
-			z-index: 1;
-        }
-		
-		.hero p1 {
-            font-family: 'Playfair Display', sans-serif;
-            font-size: 1.5rem;
-            max-width: 700px;
-            margin: 20px;
-			z-index: 1;
+            font-size: 1.3rem;
+			margin: 0 auto 50px auto;
+			color: Black;
         }
 
-        .explanation {
-			height: 85vh;
-            padding: 50px 20px;
+        .cta-btn {
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            background-color: #FF6F61;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+			font-family: 'Montserrat', sans-serif;
+        }
+
+        .cta-btn:hover {
+            background-color: #E05650;
+        }
+
+        /* Content Container */
+        .container {
+            width: 90%; 
+            margin: auto;
+            padding: 40px 0;
+        }
+
+        h1, h2 {
+            font-family: 'Playfair Display', serif;
+            color: #1A2B4C;
+        }
+
+        h1 {
             text-align: center;
-			display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            background-color: #f9f9f9;
+            font-size: 3rem;
+            margin-bottom: 30px;
         }
 
-        .explanation h2 {
-            font-family: 'Montserrat', sans-serif;
+        h2 {
             font-size: 2rem;
-            color: #333;
             margin-bottom: 20px;
         }
-
-        .explanation p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 20px auto 0 auto; 
-            color: #666;
-            line-height: 1.6;
-        }
 		
-		.explanation p1 {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 20px auto 0 auto; 
-            color: #666;
-            line-height: 1.6;
+        h4 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+			font-family: 'Montserrat', sans-serif;
+
+        }
+
+        .section {
+		margin-top: 20px; 
+            margin-bottom: 40px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
         }
 
 
+        /* Footer Section */
+        footer {
+            background-color: #1A2B4C;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+  
+    /* Quick Links Section */
         .quick-links {
             background-color: #FCE0E3;
             padding: 50px 20px;
@@ -187,7 +220,7 @@ nav {
 
         .quick-links h2 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             margin-bottom: 30px;
             color: #333;
         }
@@ -210,25 +243,10 @@ nav {
             background-color: #E05650;
             transform: scale(1.05);
         }
-
-
-        footer {
-            background-color: #1A2B4C;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            position: relative;
-            bottom: 0;
-            width: 100%;
-        }
-
-        footer p {
-            margin: 0;
-            font-size: 1rem;
-        }
-
+		
+		
     </style>
-</head>
+</head>  
 <body>
 
 <!-- Header Section -->
