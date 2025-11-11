@@ -111,8 +111,7 @@ nav {
 
         /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, rgba(249, 216, 184, 0.8), rgba(224, 213, 193, 0.8), rgba(191, 193, 178, 0.8)),
-                url('') center center/cover no-repeat;
+    background: linear-gradient(135deg, rgba(249, 216, 184, 0.8), rgba(224, 213, 193, 0.8), rgba(191, 193, 178, 0.8)), url('https://upload.wikimedia.org/wikipedia/commons/b/bf/Video_Game_Museum_in_Berlin_%2845033793755%29.jpg') center center/cover no-repeat;
     height: 80vh;
     width: 100vw;
 	height: 80vh;
@@ -202,8 +201,26 @@ nav {
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
         }
-  
-    /* Quick Links Section */
+		
+   .task-image-block {
+    margin: 16px auto 0 auto; 
+    max-width: 820px;        
+  }
+  .task-image-block img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  }
+  .task-image-block figcaption {
+    font-size: 0.95rem;
+    color: #555;
+    text-align: center;
+    margin-top: 8px;
+  }
+		
+	/* Quick Links Section */
         .quick-links {
             background-color: #FCE0E3;
             padding: 50px 20px;
@@ -269,12 +286,12 @@ nav {
                 <li><a href="labworkweek2.html">Week 2</a></li>
                 <li><a href="labworkweek3.html">Week 3</a></li>
                 <li><a href="labworkweek4.html">Week 4</a></li>
-				        <li><a href="labworkweek5.html">Week 5</a></li>
-				        <li><a href="labworkweek6.html">Week 6</a></li>
-					      <li><a href="labworkweek7.html">Week 7</a></li>
-					      <li><a href="labworkweek8.html">Week 8</a></li>
-						    <li><a href="labworkweek9.html">Week 9</a></li>
-						    <li><a href="labworkweek10.html">Week 10</a></li>
+				<li><a href="labworkweek5.html">Week 5</a></li>
+				<li><a href="labworkweek6.html">Week 6</a></li>
+				<li><a href="labworkweek7.html">Week 7</a></li>
+				<li><a href="labworkweek8.html">Week 8</a></li>
+				<li><a href="labworkweek9.html">Week 9</a></li>
+				<li><a href="labworkweek10.html">Week 10</a></li>
             </ul>
         </div>
         <a href="reflection.html">Conclusion / Reflection</a>
@@ -314,6 +331,13 @@ nav {
    <p>	  
 	(For background on Koji Kondo and his Zelda credits, see the <a href="https://zelda.fandom.com/wiki/Koji_Kondo" target="_blank">Zelda Wiki</a> and <a href="https://vgmdb.net/artist/190" target="_blank">VGMdb </a> entries.)
     </p>
+
+	<figure class="task-image-block">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Koji_Kondo_-_GDC_2007.jpg"
+       alt="Koji Kondo at the Game Developers Conference in 2007."
+       loading="lazy">
+  <figcaption>Figure 1. Koji Kondo at the Game Developers Conference in 2007.</figcaption>
+</figure>	  
 	  
   </div>
 
@@ -325,7 +349,7 @@ nav {
   </p>
 
   <!-- Musical Scores -->
-  <h3>Musical Scores — Notated (Symbolic) Data</h3>
+  <h3>• Musical Scores — Notated (Symbolic) Data</h3>
 
   <p>
     Musical scores provide a symbolic representation of Kondo’s work, allowing for detailed analysis of his melodic, harmonic, and rhythmic structures. By studying transcriptions of his themes, it becomes possible to trace how motifs develop and reappear throughout the <em>Zelda</em> franchise.
@@ -340,7 +364,7 @@ nav {
   </p>
 
   <!-- Metadata -->
-  <h3>Metadata — Descriptive and Contextual Data</h3>
+  <h3>• Metadata — Descriptive and Contextual Data</h3>
 
   <p>
     Metadata provides the descriptive backbone of this dataset, detailing each composition’s context, authorship, and distribution. Key metadata fields include:
@@ -364,12 +388,12 @@ nav {
   </p>
 
   <!-- Audio Recordings -->
-  <h3>Audio Recordings — Acoustic Data</h3>
+  <h3>• Audio Recordings — Acoustic Data</h3>
   <p>
     Audio recordings represent the acoustic realisation of Kondo’s work and are essential for understanding its timbral, textural, and performance characteristics. These recordings reveal how Kondo’s compositions evolved from early 8-bit soundscapes to modern orchestral performances.
   </p>
   <p>
-    Official soundtracks are widely available through streaming platforms such as <strong>Spotify</strong>, <strong>Apple Music</strong>, and <strong>YouTube</strong>, as well as on physical formats including CDs and vinyl. Archives such as <a href="https://downloads.khinsider.com/" target="_blank">KHInsider</a> preserve original in-game audio files, including those from older consoles, stored in proprietary formats like <code>.brstm</code> and <code>.bfstm</code>.
+    Official soundtracks are widely available on streaming platforms such as <strong>Spotify</strong>, <strong>Apple Music</strong>, and <strong>YouTube</strong>, as well as on physical formats including CDs and vinyl. Archives such as <a href="https://downloads.khinsider.com/" target="_blank">KHInsider</a> preserve original in-game audio files, including those from older consoles, stored in proprietary formats like <code>.brstm</code> and <code>.bfstm</code>.
   </p>
   <p>
     Live orchestral adaptations, most notably <em>The Legend of Zelda: Symphony of the Goddesses</em>, add another dimension of acoustic data, presenting official orchestral interpretations of Kondo’s music. Meanwhile, fan-created remixes, covers, and re-orchestrations hosted on <strong>YouTube</strong> and <strong>SoundCloud</strong> demonstrate the community’s active engagement and reimagining of Kondo’s work.
