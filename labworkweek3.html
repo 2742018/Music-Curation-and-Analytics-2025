@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio for Music Curation and Analytics</title>
+    <title>Week 3 – Verovio | Portfolio for Music Curation and Analytics</title>
     <script type="text/javascript" src="https://www.x3dom.org/download/x3dom.js"></script>
     <link rel="stylesheet" type="text/css" href="https://www.x3dom.org/download/x3dom.css">
-</head>
  
     <style>
        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Playfair+Display:wght@700&display=swap');
@@ -22,8 +21,7 @@
             font-family: 'Helvetica', sans-serif;
             background-color: #f4f4f4;
             color: #333;
-			line-height: 1.6;
-
+            line-height: 1.6;
         }
 
         /* Header Styles */
@@ -95,7 +93,7 @@
 		}
 
 		.dropdown:hover .submenu {
-    display: block;
+    		display: block;
 		}
 
 		.dropdown:hover .submenu,
@@ -104,16 +102,16 @@
 		}
 
 		.dropdown .submenu {
-    margin-top: -1px;
+    		margin-top: -1px;
 		}
 
-
-/* Hero Section */
+        /* Hero Section */
 		.hero {
-    		background: linear-gradient(135deg, rgba(249, 216, 184, 0.8), rgba(224, 213, 193, 0.8), rgba(191, 193, 178, 0.8)), url('https://upload.wikimedia.org/wikipedia/commons/b/bf/Video_Game_Museum_in_Berlin_%2845033793755%29.jpg') center center/cover no-repeat;
-    		height: 83vh;
+    		background: linear-gradient(135deg, rgba(249, 216, 184, 0.8), rgba(224, 213, 193, 0.8), rgba(191, 193, 178, 0.8)), 
+                        url('https://upload.wikimedia.org/wikipedia/commons/b/bf/Video_Game_Museum_in_Berlin_%2845033793755%29.jpg') 
+                        center center/cover no-repeat;
+    		height: 80vh;
     		width: 100vw;
-			height: 80vh;
     		display: flex;
     		justify-content: center;
     		align-items: center;
@@ -127,14 +125,14 @@
         .hero h1 {
             font-family: 'Playfair Display', serif;
             font-size: 3.5rem;
-			color: Black;
+			color: black;
         }
 
         .hero p {
             font-family: 'Montserrat', sans-serif;
             font-size: 1.3rem;
 			margin: 0 auto 50px auto;
-			color: Black;
+			color: black;
         }
 
         .cta-btn {
@@ -181,17 +179,16 @@
             font-size: 1.5rem;
             margin-bottom: 20px;
 			font-family: 'Montserrat', sans-serif;
-
         }		
+
         p, ul {
             font-size: 1.2rem;
             margin-bottom: 20px;
 			font-family: 'Helvetica', sans-serif;
-
         }
 
         .section {
-		margin-top: 20px; 
+		    margin-top: 20px; 
             margin-bottom: 40px;
         }
 
@@ -213,13 +210,24 @@
     		border-radius: 12px;
     		box-shadow: 0 6px 18px rgba(0,0,0,0.15);
   		}
-  		.task-image-block figcaption {
+  		
+        .task-image-block figcaption {
     		font-size: 0.95rem;
     		color: #555;
     		text-align: center;
     		margin-top: 8px;
   		}
-		
+
+        /* Verovio app styling */
+        #app {
+            width: 100%;
+            min-height: 60vh;
+            border: 1px solid #ccc;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            box-sizing: border-box;
+        }
+
 	/* Quick Links Section */
         .quick-links {
             background-color: #FCE0E3;
@@ -252,10 +260,9 @@
             background-color: #E05650;
             transform: scale(1.05);
         }
-		
 
 	/* Footer Section */
-     footer {
+        footer {
             background-color: #1A2B4C;
             color: white;
             text-align: center;
@@ -269,13 +276,11 @@
             margin: 0;
             font-size: 1rem;
         }	
-		
     </style>
 </head>  
 <body>
 
 <!-- Header Section -->
-    
 <header>
     <nav>
         <a href="index.html">Home</a>
@@ -299,36 +304,85 @@
 </header>
 
 <!-- Hero Section -->
-   
 <section class="hero">
     <div>
-      <h1>Week 3 – </h1>
-        <p>???</p>
-          <a href="#content" class="cta-btn">Scroll Down to Explore Week 3 IL Tasks</a>
+      <h1>Week 3 – Verovio and MEI</h1>
+      <p>Rendering Koji Kondo’s Zelda music as interactive digital notation.</p>
+      <a href="#content" class="cta-btn">Scroll Down to Explore Week 3 IL Tasks</a>
     </div>
-    </section>
-
+</section>
 
 <!-- Week 3 Content Section -->
 <section id="content" class="container">
+    <h1>Week 3 – My Piece in Verovio</h1>
 
+    <div class="section">
+        <h2>Task 2: Working with Verovio and MEI</h2>
+        <p>
+            This week, I used <strong>Verovio</strong> to view and interact with a digital notation version of my chosen 
+            Koji Kondo piece from <em>The Legend of Zelda</em>. Starting from an MEI file derived from my earlier 
+            digitisation work, I explored how Verovio renders the score in the browser and how this relates to 
+            digital music representation and access.
+        </p>
+        <p>
+            The embedded viewer below shows the first page of my MEI file. It demonstrates how musical scores can be 
+            presented online in a responsive format, allowing zooming, reflow, and basic navigation without relying on 
+            static images or PDFs. 
+        </p>
+        <p>
 
+        </p>
+    </div>
 
+    <div class="section">
+        <h2>Interactive Score Viewer</h2>
+        <p>
+            The Verovio app below loads my MEI file directly in the browser. You can experiment with zooming and 
+            resizing the window to see how the notation responds.
+        </p>
+        <div id="app">Verovio is loading...</div>
+    </div>
 </section>
 
 <!-- Quick Links to Weekly Analysis -->
-	
-    <section class="quick-links">
-        <h2>Click the link below to continue exploring the portfolio</h2>
-        <a href="labworkweek4.html" class="button"> Week 4 IL Tasks</a>
-    </section>
+<section class="quick-links">
+    <h2>Click the link below to continue exploring the portfolio</h2>
+    <a href="labworkweek4.html" class="button">Week 4 IL Tasks</a>
+</section>
 
 <!-- Footer Section -->
+<footer>
+    <p>&copy; 2025 Portfolio for Music Curation and Analytics - Koji Kondo in The Legend of Zelda video game franchise. 
+        2742018. All rights reserved.</p>
+</footer>
 
-    <footer>
-        <p>&copy; 2025 Portfolio for Music Curation and Analytics - Koji Kondo in The Legend of Zelda video game franchise. 
-			2742018. All rights reserved.</p>
-    </footer>
+
+	
+<!-- Verovio Script -->
+<script type="module">
+    import 'https://www.verovio.org/javascript/app/verovio-app.js';
+    
+    const options = {
+        defaultView: 'responsive', // 'responsive' or 'document'
+        defaultZoom: 3,            // 0–7
+        enableResponsive: true,
+        enableDocument: true
+    };
+    
+    const file = 'data/MEIver_zelda-great-fairy-fountain-piano-etude-music-by-koji-kondo-arrangement-by-erik-c-piano-man#page1.mei';
+
+    const app = new Verovio.App(document.getElementById("app"), options);
+
+    fetch(file)
+        .then(response => response.text())
+        .then(text => {
+            app.loadData(text);
+        })
+        .catch(err => {
+            document.getElementById("app").innerText = "Error loading MEI file.";
+            console.error(err);
+        });
+</script>
 
 </body>
 </html>
