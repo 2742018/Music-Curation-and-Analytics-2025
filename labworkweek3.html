@@ -314,34 +314,87 @@
 
 <!-- Week 3 Content Section -->
 <section id="content" class="container">
-    <h1>Week 3 – My Piece in Verovio</h1>
+    <h1>My Piece in Verovio</h1>
 
     <div class="section">
-        <h2>Task 2: Working with Verovio and MEI</h2>
+        <h2>Task 1: Working with Verovio and MEI</h2>
         <p>
-            This week, I used <strong>Verovio</strong> to view and interact with a digital notation version of my chosen 
-            Koji Kondo piece from <em>The Legend of Zelda</em>. Starting from an MEI file derived from my earlier 
-            digitisation work, I explored how Verovio renders the score in the browser and how this relates to 
-            digital music representation and access.
+        This week, I used <strong>Verovio</strong> to view and interact with a digital notation version of my chosen Koji Kondo piece <em>Great Fairy Fountain</em> by Koji Kondo from <em>The Legend of Zelda</em> Series, arranged by Erik Correll 'Piano Man'. By using the edited MuseScore file from Week 2, I explored how Verovio renders the score in the browser and how this relates to digital music representation and access.
         </p>
         <p>
-            The embedded viewer below shows the first page of my MEI file. It demonstrates how musical scores can be 
-            presented online in a responsive format, allowing zooming, reflow, and basic navigation without relying on 
-            static images or PDFs. 
-        </p>
-        <p>
-
+        The embedded viewer below shows the first page of my MEI file. It demonstrates how musical scores can be presented online in a responsive format, allowing zooming, reflow, and basic navigation without relying on static images or PDFs. 
         </p>
     </div>
 
     <div class="section">
         <h2>Interactive Score Viewer</h2>
-        <p>
-            The Verovio app below loads my MEI file directly in the browser. You can experiment with zooming and 
-            resizing the window to see how the notation responds.
-        </p>
+		<p>
+    		The Verovio app below loads my MEI file directly in the browser. You can experiment with zooming and resizing the window to see how the notation responds. The original MEI file can also be found and downloaded on my <a href="https://github.com/2742018/Music-Curation-and-Analytics-2025/tree/1f371f812d87479962bb5e85c819911666c04fa9/data" target="_blank">GitHub repository</a> in the 'data' folder.
+		</p>
         <div id="app">Verovio is loading...</div>
     </div>
+
+
+<h2>Task 2: Comparison of MusicXML and MEI Encoding</h2>
+	<p>
+  	To better understand how my <em>Great Fairy Fountain</em> transcription is represented in two different encoding standards, I compared three core XML elements in the <strong>MusicXML</strong> file with their equivalents in the <strong>MEI</strong> file: the note element, the measure element, and the clef element. Examining these side by side highlights differences in naming conventions, attribute usage, structural organisation, and the intended purpose of each standard.
+	</p>
+
+<h3>1. Notes (<code>&lt;note&gt;</code> in MusicXML vs <code>&lt;note&gt;</code> in MEI)</h3>
+	<ul>
+  		<li>
+    		In <strong>MusicXML</strong>, the <code>&lt;note&gt;</code> element contains nested child elements such as <code>&lt;pitch&gt;</code> (with <code>&lt;step&gt;</code>, <code>&lt;alter&gt;</code>, <code>&lt;octave&gt;</code>), <code>&lt;duration&gt;</code>, <code>&lt;voice&gt;</code>, and <code>&lt;type&gt;</code>. These structures reflect MusicXML’s focus on engraving precision and accurate playback across notation software.
+  		</li>
+  		<li>
+    		In <strong>MEI</strong>, the <code>&lt;note&gt;</code> element stores key information directly as attributes (e.g., <code>@pname</code>, <code>@oct</code>, <code>@dur</code>). MEI also supports additional editorial and analytical annotation, offering a more flexible and descriptive model.
+  		</li>
+  		<li>
+    		Overall, MusicXML is more modular and explicit, while MEI is more compact and descriptive, reflecting its scholarly focus.
+  		</li>
+	</ul>
+
+	<h3>2. Measures (<code>&lt;measure&gt;</code> in both standards)</h3>
+	<ul>
+  		<li>
+    		In <strong>MusicXML</strong>, <code>&lt;measure&gt;</code> elements include measure numbers and contain notation-related child elements such as <code>&lt;attributes&gt;</code>, <code>&lt;direction&gt;</code>, and <code>&lt;note&gt;</code>. This structure provides high interoperability between notation applications.
+  		</li>
+  		<li> In <strong>MEI</strong>, <code>&lt;measure&gt;</code> can also carry identifiers but may appear within more complex hierarchical structures that support variants, editorial layers, or alternative readings. This design aligns with MEI’s emphasis on critical editing and detailed encoding of musical sources.
+  		</li>
+  		<li>
+    		MEI therefore accommodates richer contextual information, whereas MusicXML focuses on a single, clear representation intended for performance and software compatibility.
+  		</li>
+	</ul>
+
+	<h3>3. Clefs (<code>&lt;clef&gt;</code> elements)</h3>
+	<ul>
+  		<li>
+    		In <strong>MusicXML</strong>, clefs appear within the <code>&lt;attributes&gt;</code> element and include <code>&lt;sign&gt;</code> and <code>&lt;line&gt;</code> child elements to specify clef type and staff position.
+  		</li>
+  		<li>
+    		In <strong>MEI</strong>, clefs are represented using attributes such as <code>@shape</code> and <code>@line</code>, and can be integrated more flexibly across staves, layers, and editorial contexts.
+  	</li>
+  	<li>
+    	This distinction highlights MEI’s adaptable document structure compared with MusicXML’s straightforward representation for consistent rendering across notation tools.
+  	</li>
+</ul>
+
+	<p>
+  		In summary, both MusicXML and MEI successfully encode the musical content of my Koji Kondo transcription. But they still do so with different priorities: MusicXML is optimised for interoperability and playback, while MEI provides a more expressive, flexible model suited for scholarly, archival, and editorial work.
+	</p>
+
+<!-- Citations -->
+<p><strong>References:</strong></p>
+<ul>
+  <li>
+    W3C. (2021). <em>MusicXML 4.0 Documentation.</em> 
+    Retrieved from <a href="https://www.w3.org/2021/06/musicxml40/" target="_blank">https://www.w3.org/2021/06/musicxml40/</a>
+  </li>
+  <li>
+    Music Encoding Initiative. (2022). <em>MEI Guidelines, Version 4.</em> 
+    Retrieved from <a href="https://music-encoding.org/guidelines/v4/content/" target="_blank">https://music-encoding.org/guidelines/v4/content/</a>
+  </li>
+</ul>
+
 </section>
 
 <!-- Quick Links to Weekly Analysis -->
