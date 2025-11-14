@@ -231,7 +231,21 @@
             color: #666;
             background-color: #fafafa;
         }
-	
+
+		.screenshot-row {
+			display: flex;
+    		justify-content: center;
+    		gap: 20px;
+    		margin: 20px 0;
+		}
+
+		.screenshot-row img {
+    		max-width: 45%;   
+    		height: auto;
+    		border-radius: 10px;
+    		display: block;
+		}
+
 	/* Quick Links Section */
         .quick-links {
             background-color: #FCE0E3;
@@ -362,104 +376,120 @@
 
   <!-- Section 2: OMR -->
   <div class="section">
-    <h2>2. Digitisation Using Audiveris (OMR)</h2>
-    <p>
-      The printed PDF was imported into <strong>Audiveris</strong> OMR, which automatically analysed its musical symbols and attempted to generate 
-      a corresponding digital notation file.
-    </p>
+   <p>
+    The engraved PDF score was imported into <strong>Audiveris</strong>, an Optical Music Recognition (OMR) tool that 
+    automatically analyses printed notation and attempts to convert it into an editable digital format. 
+    This process produced an initial draft of the transcription, which served as the basis for subsequent corrections in MuseScore.
+  </p>
 
-    <h3>2.1 Accuracy of OMR Output</h3>
-    <p>
-      The OMR engine accurately recognised several structural elements, including:
-    </p>
-    <ul>
-      <li>Staff and system layout</li>
-      <li>Clefs and initial time signatures</li>
-      <li>A significant portion of the pitch material</li>
-      <li>Barline positions and measure divisions</li>
-    </ul>
+  <h3>2.1 Accuracy of OMR Output</h3>
+  	<p>
+    	Audiveris successfully recognised several core structural elements of the score, including:
+  	</p>
+  <ul>
+    <li>Overall staff and system layout</li>
+    <li>Clefs and initial time signatures</li>
+    <li>A substantial portion of the pitch material</li>
+    <li>Barline positions and basic measure divisions</li>
+  </ul>
 
-    <div class="screenshot-placeholder">
-      <img src="tasks/Audiveris screenshot 1.png" alt="Audiveris analysis">
-    </div>
+<div class="screenshot-row">
+    <img src="tasks/Audiveris screenshot 1.png" 
+         alt="labworkweek2_png_1_Audiveris">
 
-    <p>
-      However, several transcription errors occurred, consistent with known limitations of OMR systems:
-    </p>
-    <ul>
-      <li>Dotted rhythms were frequently misinterpreted, often recognised as undotted values or incorrectly as tied notes.</li>
-      <li>Rests were inconsistently detected, leading to missing or extraneous rests in certain measures.</li>
-      <li>Slurs and ties were not reliably captured, resulting in disrupted phrase continuity.</li>
-      <li>Accidentals occasionally failed to register or were applied incorrectly within the measure.</li>
-      <li>Beat distribution was sometimes inaccurate, producing measures with incorrect total durations.</li>
-    </ul>
-    <p>
-      These issues required manual review and correction to preserve the accuracy of the musical information.
-    </p>
-  </div>
+    <img src="tasks/Audiveris screenshot 2.png" 
+         alt="labworkweek2_png_2_Audiveris">
+</div>
 
+  <p>
+    Despite this, a number of transcription errors occurred, reflecting common limitations of current OMR technology:
+  </p>
+  <ul>
+    <li>Dotted rhythms were frequently misinterpreted, often read as undotted values or inaccurately rendered as tied notes.</li>
+    <li>Rests were inconsistently detected, resulting in both missing and extraneous rests within several measures.</li>
+    <li>Slurs and ties failed to register reliably, disrupting intended phrasing and note sustain.</li>
+    <li>Accidentals were occasionally omitted or incorrectly applied.</li>
+    <li>Beat distribution was sometimes inaccurate, producing measures with incorrect total durations.</li>
+  </ul>
+
+  <p>
+    These inaccuracies required detailed manual correction to ensure that the digital transcription faithfully reflected the intended musical content.
+  </p>
+</div>
+	
   <!-- Section 3: Editing in MuseScore -->
   <div class="section">
-    <h2>3. Editing and Correcting the Score in MuseScore</h2>
-    <p>
-      The OMR output was exported as a <strong>MusicXML</strong> file and subsequently opened in <strong>MuseScore</strong> for systematic correction. 
-      MuseScore provided a flexible environment for editing notation, enabling both visual inspection and auditory verification through playback.
-    </p>
+<h2>3. Editing and Correcting the Score in MuseScore</h2>
+<p>
+  The OMR output was exported as a <strong>MusicXML</strong> file and opened in <strong>MuseScore</strong> for systematic correction. 
+  MuseScore provided an effective environment for editing notation, offering both detailed visual inspection and auditory verification 
+  through its playback features. This stage was essential for resolving recognition errors introduced during the OMR process.
+</p>
 
-    <div class="screenshot-placeholder">
-      Screenshot Placeholder: MuseScore view of the imported MusicXML file
-    </div>
+<img src="tasks/musescorestudio.png" 
+     alt="Screenshot"
+     style="display:block; margin:20px auto; max-width:80%; height:auto; border-radius:10px;">
 
-    <h3>3.1 Corrections Performed</h3>
-    <p>
-      I edited more than fifteen bars, focusing on restoring the correct rhythmic and pitch structures. Key corrections included:
-    </p>
-    <ul>
-      <li>Re-entering notes with incorrect pitch or duration.</li>
-      <li>Fixing measures with erroneous beat totals to align with the time signature.</li>
-      <li>Reinstating missing rests and removing incorrectly interpreted ones.</li>
-      <li>Adding slurs, ties, and dynamics where they had been omitted.</li>
-      <li>Clarifying phrase structure and articulation.</li>
-    </ul>
+<h3>3.1 Corrections Performed</h3>
+<p>
+  I corrected a total of 17 bars, focusing primarily on restoring accurate rhythmic and pitch information. 
+  The most significant corrections included:
+</p>
+<ul>
+  <li>Re-entering notes whose pitch or duration had been incorrectly recognised by the OMR engine.</li>
+  <li>Repairing measures with incorrect beat totals to conform to the intended time signature.</li>
+  <li>Reinstating missing rests and removing incorrectly inserted ones to maintain metric accuracy.</li>
+  <li>Restoring slurs, ties, and basic dynamic markings omitted during the OMR conversion.</li>
+  <li>Clarifying phrase structure and ensuring consistent articulation throughout the edited measures.</li>
+</ul>
 
-    <h3>3.2 Observations on MuseScore Functionality</h3>
-    <h3>Strengths</h3>
-    <ul>
-      <li>The note-input tools were intuitive and efficient for re-entering material.</li>
-      <li>Playback functionality facilitated checking rhythmic and pitch accuracy.</li>
-      <li>The interface allowed precise adjustments to slurs, dynamics, and articulations.</li>
-      <li>Zoom and inspection tools supported detailed verification of the transcription.</li>
-    </ul>
+<h3>3.2 Observations on MuseScore Functionality</h3>
 
-    <h3>Challenges</h3>
-    <ul>
-      <li>Measures corrupted by OMR errors occasionally required deleting and reconstructing entire bars.</li>
-      <li>Some MusicXML elements were interpreted inconsistently, requiring additional clean-up.</li>
-      <li>Re-aligning ties and slurs demanded multiple steps to maintain correct phrasing.</li>
-    </ul>
+<h3>Strengths</h3>
+<ul>
+  <li>The note-input system was intuitive and efficient for re-entering or adjusting musical material.</li>
+  <li>The playback feature allowed precise checking of corrected rhythms, pitches, and phrasing.</li>
+  <li>MuseScore’s interface supported detailed adjustments to slurs, ties, articulation marks, and dynamics.</li>
+  <li>Zoom, selection, and navigation tools made it easy to inspect notation at a granular level.</li>
+</ul>
 
-    <div class="screenshot-placeholder">
-      Screenshot Placeholder: corrected measures within MuseScore
-    </div>
+<h3>Challenges</h3>
+<ul>
+  <li>Measures heavily distorted by OMR errors sometimes required deleting and reconstructing entire bars.</li>
+  <li>Certain MusicXML elements are imported inconsistently, resulting in additional manual clean-up.</li>
+  <li>Re-aligning ties, slurs, and phrase markings occasionally required multiple steps to maintain accuracy.</li>
+</ul>
+
+<div class="screenshot-row">
+    <img src="tasks/labworkweek2_png_page 1_zelda-great-fairy-fountain-piano-etude-music-by-koji-kondo-arrangement-by-erik-c-piano-man.png" 
+         alt="labworkweek2_png_page 1_zelda-great-fairy-fountain-piano-etude-music-by-koji-kondo-arrangement-by-erik-c-piano-man">
+
+    <img src="tasks/labworkweek2_png_page 2_zelda-great-fairy-fountain-piano-etude-music-by-koji-kondo-arrangement-by-erik-c-piano-man.png" 
+         alt="labworkweek2_png_page 2_zelda-great-fairy-fountain-piano-etude-music-by-koji-kondo-arrangement-by-erik-c-piano-man">
+</div>
+	  
   </div>
 
   <!-- Section 4: Reflection -->
-  <div class="section">
-    <h2>4. Reflection</h2>
-    <p>
-      This digitisation exercise highlighted the interplay between automated recognition systems and human editorial oversight in music preservation. 
-      While Audiveris OMR provided an efficient starting point, the inaccuracies in its output underscored the limitations of current OMR technology, 
-      particularly when applied to complex musical textures or non-standard engraving practices.
-    </p>
-    <p>
-      The subsequent correction process in MuseScore demonstrated the essential role of manual verification and interpretive decision-making in archival work. 
-      Through this task, I developed a deeper understanding of how musical information is encoded, the fragility of automated transcription workflows, 
-      and the necessity of accurate digital representation for future scholarly analysis and long-term preservation.
-    </p>
+<div class="section">
+  <h2>4. Reflection</h2>
+  <p>
+    This digitisation exercise highlighted the complex relationship between automated recognition tools and the essential role of human editorial intervention in preserving musical materials. Although Audiveris OMR provided an efficient starting point by rapidly converting the printed score into a digital format, the inaccuracies in its output demonstrated the current limitations of OMR technology—particularly when dealing with nuanced rhythmic structures, expressive markings, or more intricate engraving.
+  </p>
 
-    <div class="screenshot-placeholder">
-      Screenshot Placeholder: final MuseScore file export confirmation
-    </div>
+  <p>
+    The subsequent correction process in MuseScore underscored the need for detailed manual review. Editing the score required both technical precision and interpretive judgement, revealing how musical information—pitch, rhythm, articulation, and phrasing—is intricately encoded in digital notation. This task deepened my understanding of the fragility of automated transcription workflows. It emphasised the importance of accurate digital representation for long-term preservation, scholarly analysis, and future accessibility within archival contexts.
+  </p>
+</div>
+
+<p>
+  The final corrected MuseScore file for this digitisation task is available through two access points. You can view and download the score directly from my <a href="https://github.com/2742018/Music-Curation-and-Analytics-2025.git" target="_blank"><strong>GitHub MCA repository</strong></a>, where it is stored in the 'tasks' folder as part of my project’s archival materials. Additionally, an online published version is provided via MuseScore for both <a href="https://musescore.com/user/111314447/scores/29334179/s/CMlm1g?share=copy_link" target="_blank"><strong>Page 1</strong></a> and <a href="https://musescore.com/user/111314447/scores/29334128/s/lVKwhC?share=copy_link" target="_blank"><strong>Page 2</strong></a>for quick access. These links ensure that the file remains easily accessible for review.
+</p>
+	
+<img src="tasks/musescoreupload.png" 
+     alt="Screenshot"
+     style="display:block; margin:20px auto; max-width:80%; height:auto; border-radius:10px;">
+	
   </div>
 </section>
 
