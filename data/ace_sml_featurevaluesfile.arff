@@ -1,0 +1,31 @@
+@relation Converted_from_ACE_XML
+
+@attribute Pitch_Class_Histogram_0 numeric
+@attribute Pitch_Class_Histogram_1 numeric
+@attribute Pitch_Class_Histogram_2 numeric
+@attribute Pitch_Class_Histogram_3 numeric
+@attribute Pitch_Class_Histogram_4 numeric
+@attribute Pitch_Class_Histogram_5 numeric
+@attribute Pitch_Class_Histogram_6 numeric
+@attribute Pitch_Class_Histogram_7 numeric
+@attribute Pitch_Class_Histogram_8 numeric
+@attribute Pitch_Class_Histogram_9 numeric
+@attribute Pitch_Class_Histogram_10 numeric
+@attribute Pitch_Class_Histogram_11 numeric
+@attribute Number_of_Pitches numeric
+@attribute Number_of_Pitch_Classes numeric
+@attribute Number_of_Common_Pitch_Classes numeric
+@attribute Range numeric
+@attribute Strong_Tonal_Centres numeric
+@attribute Mean_Pitch numeric
+@attribute Most_Common_Pitch numeric
+@attribute Most_Common_Pitch_Class numeric
+@attribute Interval_Between_Most_Prevalent_Pitch_Classes numeric
+@attribute Pitch_Variability numeric
+@attribute Last_Pitch numeric
+@attribute Most_Common_Melodic_Interval numeric
+@attribute Mean_Rhythmic_Value numeric
+@attribute Most_Common_Rhythmic_Value numeric
+
+@data
+0.1825, 0.0, 0.09489, 0.00365, 0.1606, 0.02555, 0.05109, 0.1131, 0.03285, 0.1715, 0.00365, 0.1606, 37.0, 11.0, 0.0, 53.0, 2.0, 65.0, 70.0, 10.0, 3.0, 11.01, 70.0, 3.0, 0.4872, 0.25

@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<!DOCTYPE feature_vector_file [
+   <!ELEMENT feature_vector_file (comments, data_set+)>
+   <!ELEMENT comments (#PCDATA)>
+   <!ELEMENT data_set (data_set_id, section*, feature*)>
+   <!ELEMENT data_set_id (#PCDATA)>
+   <!ELEMENT section (feature+)>
+   <!ATTLIST section start CDATA ""
+                     stop CDATA "">
+   <!ELEMENT feature (name, v+)>
+   <!ELEMENT name (#PCDATA)>
+   <!ELEMENT v (#PCDATA)>
+]>
+
+<feature_vector_file>
+
+   <comments></comments>
+
+	<data_set>
+		<data_set_id>C:\Users\karin\OneDrive\Desktop\MCA\midiver-zelda-great-fairy-fountain-piano-etude-music-by-koji-kondo-arrangement-by-erik-c-piano-man-page1.mid</data_set_id>
+		<feature>
+			<name>Pitch Class Histogram</name>
+			<v>1.825E-1</v>
+			<v>0E0</v>
+			<v>9.489E-2</v>
+			<v>3.65E-3</v>
+			<v>1.606E-1</v>
+			<v>2.555E-2</v>
+			<v>5.109E-2</v>
+			<v>1.131E-1</v>
+			<v>3.285E-2</v>
+			<v>1.715E-1</v>
+			<v>3.65E-3</v>
+			<v>1.606E-1</v>
+		</feature>
+		<feature>
+			<name>Number of Pitches</name>
+			<v>3.7E1</v>
+		</feature>
+		<feature>
+			<name>Number of Pitch Classes</name>
+			<v>1.1E1</v>
+		</feature>
+		<feature>
+			<name>Number of Common Pitch Classes</name>
+			<v>0E0</v>
+		</feature>
+		<feature>
+			<name>Range</name>
+			<v>5.3E1</v>
+		</feature>
+		<feature>
+			<name>Strong Tonal Centres</name>
+			<v>2E0</v>
+		</feature>
+		<feature>
+			<name>Mean Pitch</name>
+			<v>6.5E1</v>
+		</feature>
+		<feature>
+			<name>Most Common Pitch</name>
+			<v>7E1</v>
+		</feature>
+		<feature>
+			<name>Most Common Pitch Class</name>
+			<v>1E1</v>
+		</feature>
+		<feature>
+			<name>Interval Between Most Prevalent Pitch Classes</name>
+			<v>3E0</v>
+		</feature>
+		<feature>
+			<name>Pitch Variability</name>
+			<v>1.101E1</v>
+		</feature>
+		<feature>
+			<name>Last Pitch</name>
+			<v>7E1</v>
+		</feature>
+		<feature>
+			<name>Most Common Melodic Interval</name>
+			<v>3E0</v>
+		</feature>
+		<feature>
+			<name>Mean Rhythmic Value</name>
+			<v>4.872E-1</v>
+		</feature>
+		<feature>
+			<name>Most Common Rhythmic Value</name>
+			<v>2.5E-1</v>
+		</feature>
+	</data_set>
+
+</feature_vector_file>
