@@ -286,12 +286,12 @@
                 <li><a href="labworkweek2.html">Week 2</a></li>
                 <li><a href="labworkweek3.html">Week 3</a></li>
                 <li><a href="labworkweek4.html">Week 4</a></li>
-				        <li><a href="labworkweek5.html">Week 5</a></li>
-				        <li><a href="labworkweek6.html">Week 6</a></li>
-				        <li><a href="labworkweek7.html">Week 7</a></li>
-				        <li><a href="labworkweek8.html">Week 8</a></li>
-				        <li><a href="labworkweek9.html">Week 9</a></li>
-				        <li><a href="labworkweek10.html">Week 10</a></li>
+				<li><a href="labworkweek5.html">Week 5</a></li>
+				<li><a href="labworkweek6.html">Week 6</a></li>
+				<li><a href="labworkweek7.html">Week 7</a></li>
+				<li><a href="labworkweek8.html">Week 8</a></li>
+				<li><a href="labworkweek9.html">Week 9</a></li>
+				<li><a href="labworkweek10.html">Week 10</a></li>
             </ul>
         </div>
         <a href="reflection.html">Conclusion / Reflection</a>
@@ -302,8 +302,8 @@
    
 <section class="hero">
     <div>
-      <h1>Week 4 – </h1>
-        <p>???</p>
+      <h1>Week 4 – Computational Analytics of Notated Music</h1>
+        <p>Using jSymbolic & music21 </p>
           <a href="#content" class="cta-btn">Scroll Down to Explore Week 4 IL Tasks</a>
     </div>
     </section>
@@ -312,7 +312,165 @@
 <!-- Week 4 Content Section -->
 <section id="content" class="container">
 
+    <h1>Computational Analysis Using jSymbolic & music21</h1>
 
+    <div class="section">
+        <p>
+            Using my digitised transcription of <em>Great Fairy Fountain</em> from <em>The Legend of Zelda</em>, I generated numerical feature
+            sets (via jSymbolic) and visual analytical outputs (via music21). These approaches reveal important information about pitch 
+            behaviour, rhythmic patterns, register, and structural elements of the piece.
+        </p>
+        <p>
+            The results presented here would be useful for musicologists, computational researchers, or anyone exploring stylistic
+            tendencies within Koji Kondo’s Zelda soundtracks.
+        </p>
+    </div>
+
+    <!-- jSymbolic Section -->
+    <div class="section">
+        <h2>1. jSymbolic Analysis</h2>
+
+        <h3>1.1 Method</h3>
+        <p>
+            I exported my corrected transcription as a <strong>MIDI (.mid)</strong> file from MuseScore, since jSymbolic requires MIDI input. I then launched <strong>jsymbolic.jar</strong> and selectedthe following features for extraction:
+        </p>
+		
+        <ul>
+            <li><em>Range</em></li>
+            <li><em>Mean Pitch</em></li>
+            <li><em>Most Common Pitch Class</em></li>
+            <li><em>Last Pitch</em></li>
+            <li><em>Most Common Rhythmic Value</em></li>
+        </ul>
+
+		 <p>The jSymbolic generated two key outputs: a <strong>Feature Values CSV</strong> and a <strong>Feature Definitions XML</strong>. Both files have been uploaded to my GitHub repository and are accessible below.
+		</p>
+
+		<p>
+  All jSymbolic output files are available in the 'data' folder of my <a href="https://github.com/2742018/Music-Curation-and-Analytics-2025/tree/8d4254ef9cb1e16153361c5d21f6463f77918c13/data" target="_blank"><strong>GitHub Music-Curation-and-Analytics-2025 repository</strong></a>, and the extracted features have also been collated into an online spreadsheet for easier inspection:<a href="https://gla-my.sharepoint.com/:x:/g/personal/2742018t_student_gla_ac_uk/Ebh9XhjCcSFFklQca65k2osB9MmlhjSGlZh1sxUMBHVgIA?e=5SsMDn&nav=MTVfezRFMDk3MzcyLUUzM0MtNDdDNy1CNThGLUY2MzU1OEEzQjBCMX0" target="_blank"><strong>view the jSymbolic feature table</strong></a> or view the interactive spreadsheet box below.
+		</p>
+
+		<!-- Interactive embedded spreadsheet box -->
+		<div class="embed-container" style="margin: 1rem 0; border: 1px solid #ccc; border-radius: 8px; overflow: hidden;">
+  			<iframe src="https://gla-my.sharepoint.com/:x:/g/personal/2742018t_student_gla_ac_uk/Ebh9XhjCcSFFklQca65k2osB9MmlhjSGlZh1sxUMBHVgIA?e=5SsMDn&nav=MTVfezRFMDk3MzcyLUUzM0MtNDdDNy1CNThGLUY2MzU1OEEzQjBCMX0" 
+    			width="100%" 
+    			height="400" 
+    			frameborder="0" 
+    			scrolling="yes">
+  			</iframe>
+		</div>
+		
+        <p>
+            These extracted features provide a structured overview of the musical behaviour of the piece, translating qualitative listening impressions into quantifiable data.
+        </p>
+		
+        <h3>1.2 Interpretation of jSymbolic Features</h3>
+
+        <p><strong>Range:</strong> The calculated pitch range confirms that the piece sits predominantly in the mid-to-high register, aligning with the fairy-like, shimmering timbre that defines the Fairy Fountain theme. This numerical range supports the stylistic observation of its lightness and transparency.
+		</p>
+
+        <p><strong>Mean Pitch:</strong> The mean pitch was also relatively high, which corresponds with the melodic writing in the upper treble clef. This aligns with the theme's emotional and atmospheric design, where high-register writing creates a sense of weightlessness and magic.</p>
+
+        <p><strong>Most Common Pitch Class:</strong> The most common pitch class was 9, corresponding to A. This is musically consistent with the piece’s tonality: Great Fairy Fountain is centred around A minor. This validation is important because it confirms the accuracy of my transcription and the integrity of the encoded data.</p>
+
+        <p><strong>Last Pitch:</strong> The last pitch in the piece is also an A, reinforcing tonal closure and confirming the melodic focus on its tonic. This is typical of Kondo’s writing, which often uses strong melodic anchoring.</p>
+
+        <p><strong>Most Common Rhythmic Value:</strong> Eighth notes were identified as the most frequent rhythmic duration. This reflects the characteristic arpeggiated, rippling accompaniment pattern that gives the Fairy Fountain theme its sense of perpetual motion. The XML file visually supports this rhythmic consistency.</p>
+
+    </div>
+	
+    <!-- music21 Section -->
+    <div class="section">
+        <h2>2. music21 Analysis</h2>
+
+        <p>
+            Using the Moodle-provided Jupyter notebook, I imported my MIDI file into music21, which allowed me to generate graphical representations of the encoded score. These visualisations provide immediate insight into pitch distribution, melodic contour, rhythmic behaviour, and register emphasis.
+		 </p>
+		 <p>
+			All visual outputs were exported and uploaded to the 'data' folder in <a href="https://github.com/2742018/Music-Curation-and-Analytics-2025/tree/8d4254ef9cb1e16153361c5d21f6463f77918c13/data" target="_blank"><strong>my GitHub Music-Curation-and-Analytics-2025 repository</strong></a>.
+        </p>
+
+    <!-- Piano Roll -->
+        <h3>2.1 Piano Roll</h3>
+
+        <div class="task-image-block">
+			<img src="data/Pianorollofpitches.png" alt="Piano roll of pitches">
+			<figcaption>Piano roll of pitches generated using music21</figcaption>
+        </div>
+
+        <p>
+            The piano roll gives a time-based visualisation of the entire pitch sequence across the first 12 measures of the piece. It reveals several important musical characteristics:
+        </p>
+
+  		<ul>
+            <li><strong>High Register Dominance:</strong> Most notes fall between C5–C6, highlighting Kondo’s use of upper-register patterns to create the crystalline, delicate atmosphere associated with Fairy Fountain music.</li> 
+            <li><strong>Continuous Arpeggiation</strong>: The piano roll shows chains of evenly spaced short notes, representing the flowing, harp-like arpeggios that define the piece. This visual confirms the jSymbolic output, which identifies eighth notes as the most common rhythmic value.
+			</li>
+            <li><strong>Clear Structural Patterns</strong>: Repeated pitch clusters and motifs appear clearly in the roll, confirming the presence of recurring harmonic loops typical of early game music design.</li>
+        </ul>
+
+		<p>Overall, the piano roll reinforces many of the jSymbolic insights while making structural patterns easy to spot visually.</p>
+
+		
+	<!-- Pitch Histogram -->
+        <h3>2.2 Pitch Histogram</h3>
+
+        <div class="task-image-block">
+            <img src="data/Pitchhistogram.png" alt="Pitch histogram of the piece">
+            <figcaption>Pitch histogram showing octave distribution</figcaption>
+        </div>
+
+		<p>The pitch histogram displays the frequency of pitches by octave. This plot supports and deepens the findings from jSymbolic:</p>
+
+		<ul>
+        	<li><strong>Dominance of A, C, and E:</strong> These pitches define the A minor triad, confirming the A Aeolian tonal centre suggested by the Most Common Pitch Class feature.</li> 
+			<li><strong>Concentration in the 4th and 5th Octaves:</strong> The histogram shows that most material is in C4–E5, reinforcing the light, floating aesthetic noted earlier.</li> 
+			<li><strong>Minimal Chromaticism:</strong> There are no large spikes in chromatic tones, showing how modal purity is preserved throughout the piece. This aligns with the atmospheric, consistent mood typical of Kondo’s ambient Zelda themes.</li> 
+			
+		<p>The histogram provides a clear statistical view of pitch activity, complementing the piano roll's temporal information.</p>
+
+		
+    <!-- Scatter Plot -->
+        <h3>2.3 Pitch–Duration Scatter Plot</h3>
+
+        <div class="task-image-block">
+            <img src="data/Scatterplotofpitches.png" alt="Pitch-duration scatter plot">
+            <figcaption>Scatter plot comparing pitch height and rhythmic duration</figcaption>
+        </div>
+
+		<p>The scatter plot shows pitch on the vertical axis and rhythmic duration on the horizontal axis (in log₂ scale). This representation highlights the relationship between pitch height and rhythmic behaviour.</p>
+
+		<ul>
+        	<li><strong>Short Durations in the Upper Register:</strong> Most high-register notes (above C5) appear with short durations (mostly 1/4 and 1/8 values). This contributes to the melody's sparkling, ornamental texture.</li> 
+			<li><strong>Longer Durations in the Mid-Register:</strong> Sustained notes occur more often in the middle register, functioning as structural anchors or harmonic supports within the texture.</li> 
+			<li><strong>Rhythmic Clustering:</strong> Because the piece relies heavily on continuous arpeggiation, the scatter plot shows dense clusters of short-duration notes—a clear rhythmic fingerprint of the Fairy Fountain style.</li> 
+			
+		<p>This scatter plot expands on the jSymbolic “Most Common Rhythmic Value” feature by showing how rhythmic values interact with register and melodic shape.</p>			
+    </div>
+			
+    <!-- Conclusion -->
+    <div class="section">
+        <h2>3. Conclusion and Reflection</h2>
+        <p>
+            This week’s analysis demonstrated the usefulness of computational tools in supporting researchers working with encoded music. jSymbolic provided structured numeric descriptors that quantified pitch and rhythm, while music21 offered intuitive visualisations that reveal larger structural patterns.
+        </p>
+        <p>
+            Across both tools, the data consistently pointed to several defining characteristics of Koji Kondo’s <em>Great Fairy Fountain</em>:
+        </p>
+
+        <ul>
+            <li>An A minor tonal centre</li>
+            <li>A high-register melodic design</li>
+            <li>Continuous eighth-note arpeggiation</li>
+            <li>Modal purity with minimal chromatic movement</li>
+            <li>Upper-register ornamentation combined with stable mid-register tones</li>
+        </ul>
+
+        <p>
+            By providing multiple formats — CSV data, MIDI, MusicXML, MEI, and visual plots — this ensures that users of varying technical ability can access and understand the encoded material. This shows that computational tools can uncover stylistic tendencies and validate musical intuitions, reinforcing the importance of accessible, well-curated digital music archives for both present and future research.
+        </p>
+
+    </div>
 
 </section>
 
