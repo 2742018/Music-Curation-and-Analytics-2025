@@ -336,7 +336,9 @@
             <li><strong>Publisher</strong> – the company responsible for the original game and music (Nintendo).</li>
             <li><strong>Encoding Date</strong> – the date on which this digital MEI version was created.</li>
             <li><strong>Source Identifier (URI)</strong> – a link to the original digital source (MuseScore score page).</li>
-            <li><strong>Genre, Key, Meter</strong> – additional musical descriptors used in the work description.</li>
+  			<li><strong>(Additional) Instrumentation</strong> — performance medium (solo piano).</li>
+			<li><strong>(Additional)Editorial notes</strong> — explaining how the MEI was created.</li>
+  			<li><strong>(Additional)Revision history</strong> — indicating when the metadata was added.</li>
         </ul>
 
         <p>
@@ -349,9 +351,19 @@
         <p>
             I then modified the <code>&lt;meiHead&gt;</code> of my Week 3 MEI file to reflect this schema. The example below shows the core metadata encoded in the header, including the use of <code>@auth.uri</code> to link the composer to a stable external authority entry.
         </p>
+		<p>
+			Below is the exact <strong>valid and working</strong> <code>&lt;meiHead&gt;</code> section I created and validated in MEI Friend. It includes:
+		</p>
+		<ul>
+  			<li>Authority URI for Koji Kondo</li>
+  			<li>A clean <code>&lt;sourceDesc&gt;</code> with a MuseScore link</li>
+  			<li><code>&lt;encodingDesc&gt;</code>, <code>&lt;profileDesc&gt;</code>, <code>&lt;revisionDesc&gt;</code></li>
+		</ul>
+        
+		<h3>MEI Header Excerpt:</h3>
 
-        <h3>MEI Header Excerpt:</h3>
-        <pre><code>&lt;meiHead&gt;
+<pre><code>&lt;meiHead&gt;
+
   &lt;fileDesc&gt;
     &lt;titleStmt&gt;
       &lt;title&gt;Great Fairy Fountain&lt;/title&gt;
@@ -361,14 +373,14 @@
                   auth.uri="https://zelda.fandom.com/wiki/Koji_Kondo"&gt;
           Koji Kondo
         &lt;/persName&gt;
+
         &lt;persName role="arranger"&gt;Erik Correll&lt;/persName&gt;
         &lt;persName role="encoder"&gt;2742018&lt;/persName&gt;
       &lt;/respStmt&gt;
     &lt;/titleStmt&gt;
 
     &lt;pubStmt&gt;
-      &lt;publisher&gt;Nintendo&lt;/publisher&gt;
-      &lt;date isodate="2025-11-14"&gt;2025&lt;/date&gt;
+      &lt;date isodate="2025-11-14"&gt;2025-11-14&lt;/date&gt;
       &lt;availability&gt;All Rights Reserved&lt;/availability&gt;
     &lt;/pubStmt&gt;
 
@@ -377,19 +389,47 @@
         &lt;identifier type="URI"&gt;
           https://musescore.com/user/81591427/scores/27189142
         &lt;/identifier&gt;
+
         &lt;titleStmt&gt;
           &lt;title&gt;Great Fairy Fountain&lt;/title&gt;
           &lt;title type="uniform"&gt;Piano Etude Arrangement&lt;/title&gt;
         &lt;/titleStmt&gt;
       &lt;/source&gt;
     &lt;/sourceDesc&gt;
+
   &lt;/fileDesc&gt;
 
-  &lt;workDesc&gt;
-    &lt;genre&gt;Game Music / Ambient Theme&lt;/genre&gt;
-    &lt;key&gt;A minor&lt;/key&gt;
-    &lt;meter&gt;3/4&lt;/meter&gt;
-  &lt;/workDesc&gt;
+
+  &lt;encodingDesc&gt;
+    &lt;editorialDecl&gt;
+      &lt;p&gt;
+        This MEI file encodes a piano arrangement of "Great Fairy Fountain" from 
+        The Legend of Zelda series. The notation was created from a fan-made 
+        piano etude transcription and corrected in MuseScore before export.
+      &lt;/p&gt;
+    &lt;/editorialDecl&gt;
+  &lt;/encodingDesc&gt;
+
+
+  &lt;profileDesc&gt;
+    &lt;langUsage&gt;
+      &lt;language ident="en"&gt;English&lt;/language&gt;
+    &lt;/langUsage&gt;
+
+    &lt;perfMedium&gt;
+      &lt;instrumentation&gt;
+        &lt;instr&gt;Solo piano&lt;/instr&gt;
+      &lt;/instrumentation&gt;
+    &lt;/perfMedium&gt;
+  &lt;/profileDesc&gt;
+
+
+  &lt;revisionDesc&gt;
+    &lt;change isodate="2025-11-14"&gt;
+      Initial encoding and metadata enrichment completed for Week 5.
+    &lt;/change&gt;
+  &lt;/revisionDesc&gt;
+
 &lt;/meiHead&gt;
 </code></pre>
 
