@@ -286,12 +286,12 @@
                 <li><a href="labworkweek2.html">Week 2</a></li>
                 <li><a href="labworkweek3.html">Week 3</a></li>
                 <li><a href="labworkweek4.html">Week 4</a></li>
-				        <li><a href="labworkweek5.html">Week 5</a></li>
-				        <li><a href="labworkweek6.html">Week 6</a></li>
-				        <li><a href="labworkweek7.html">Week 7</a></li>
-				        <li><a href="labworkweek8.html">Week 8</a></li>
-				        <li><a href="labworkweek9.html">Week 9</a></li>
-				        <li><a href="labworkweek10.html">Week 10</a></li>
+				<li><a href="labworkweek5.html">Week 5</a></li>
+				<li><a href="labworkweek6.html">Week 6</a></li>
+				<li><a href="labworkweek7.html">Week 7</a></li>
+				<li><a href="labworkweek8.html">Week 8</a></li>
+				<li><a href="labworkweek9.html">Week 9</a></li>
+				<li><a href="labworkweek10.html">Week 10</a></li>
             </ul>
         </div>
         <a href="reflection.html">Conclusion / Reflection</a>
@@ -302,8 +302,8 @@
    
 <section class="hero">
     <div>
-      <h1>Week 5 – </h1>
-        <p>???</p>
+      <h1>Week 5 – Standards in Curation</h1>
+        <p>Designing a metadata schema and embedding it into my encoded Zelda score.</p>
           <a href="#content" class="cta-btn">Scroll Down to Explore Week 5 IL Tasks</a>
     </div>
     </section>
@@ -312,7 +312,117 @@
 <!-- Week 5 Content Section -->
 <section id="content" class="container">
 
+    <h1>Metadata Schema and MEI Header</h1>
 
+    <div class="section">
+        <p>
+            This week’s activity focused on designing a reusable <strong>metadata schema</strong> and embedding it into my MEI file so that each encoded piece in my future catalogue can be described in a consistent, machine-readable way. Using my ongoing theme of <em>Koji Kondo’s music for The Legend of Zelda</em>, I enriched the MEI header of my <em>Great Fairy Fountain</em> transcription with structured metadata and links to external authorities.
+        </p>
+		<p>To complete this activity, I created a schema with six metadata elements, added them into the <meiHead> of my Week 3 MEI file, and validated the result using MEI Friend.
+		</p>
+    </div>
+
+    <div class="section">
+        <h2>1. Metadata Schema Design</h2>
+        <p>
+            For this portfolio, I defined a simple yet extensible metadata schema to be applied to every encoded piece in my catalogue. It includes the required fields—title, artist, and publisher—as well as additional elements that reflect the needs of my specific project.
+        </p>
+
+        <h3>Schema Elements:</h3>
+        <ul>
+            <li><strong>Title</strong> – the main title of the piece as represented in the score.</li>
+            <li><strong>Composer (Artist)</strong> – the original creator of the music (Koji Kondo).</li>
+            <li><strong>Arranger</strong> – identifies the creator of the piano etude arrangement.</li>
+            <li><strong>Publisher</strong> – the company responsible for the original game and music (Nintendo).</li>
+            <li><strong>Encoding Date</strong> – the date on which this digital MEI version was created.</li>
+            <li><strong>Source Identifier (URI)</strong> – a link to the original digital source (MuseScore score page).</li>
+            <li><strong>Genre, Key, Meter</strong> – additional musical descriptors used in the work description.</li>
+        </ul>
+
+        <p>
+            Together, these elements support both <strong>bibliographic description</strong> (who, when, publisher, source) and <strong>musical description</strong> (genre, key, meter), creating a catalogue useful to users such as musicologists and performers.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>2. Enriching the MEI Header</h2>
+        <p>
+            I then modified the <code>&lt;meiHead&gt;</code> of my Week 3 MEI file to reflect this schema. The example below shows the core metadata encoded in the header, including the use of <code>@auth.uri</code> to link the composer to a stable external authority entry.
+        </p>
+
+        <h3>MEI Header Excerpt:</h3>
+        <pre><code>&lt;meiHead&gt;
+  &lt;fileDesc&gt;
+    &lt;titleStmt&gt;
+      &lt;title&gt;Great Fairy Fountain&lt;/title&gt;
+
+      &lt;respStmt&gt;
+        &lt;persName role="composer"
+                  auth.uri="https://www.wikidata.org/wiki/Q51308"&gt;
+          Koji Kondo
+        &lt;/persName&gt;
+        &lt;persName role="arranger"&gt;Erik Correll&lt;/persName&gt;
+        &lt;persName role="encoder"&gt;2742018&lt;/persName&gt;
+      &lt;/respStmt&gt;
+    &lt;/titleStmt&gt;
+
+    &lt;pubStmt&gt;
+      &lt;publisher&gt;Nintendo&lt;/publisher&gt;
+      &lt;date isodate="2025-11-14"&gt;2025&lt;/date&gt;
+      &lt;availability&gt;All Rights Reserved&lt;/availability&gt;
+    &lt;/pubStmt&gt;
+
+    &lt;sourceDesc&gt;
+      &lt;source&gt;
+        &lt;identifier type="URI"&gt;
+          https://musescore.com/user/81591427/scores/27189142
+        &lt;/identifier&gt;
+        &lt;titleStmt&gt;
+          &lt;title&gt;Great Fairy Fountain&lt;/title&gt;
+          &lt;title type="uniform"&gt;Piano Etude Arrangement&lt;/title&gt;
+        &lt;/titleStmt&gt;
+      &lt;/source&gt;
+    &lt;/sourceDesc&gt;
+  &lt;/fileDesc&gt;
+
+  &lt;workDesc&gt;
+    &lt;genre&gt;Game Music / Ambient Theme&lt;/genre&gt;
+    &lt;key&gt;A minor&lt;/key&gt;
+    &lt;meter&gt;3/4&lt;/meter&gt;
+  &lt;/workDesc&gt;
+&lt;/meiHead&gt;
+</code></pre>
+
+        <p>
+            The <code>@auth.uri</code> attribute on the composer’s <code>&lt;persName&gt;</code> element links to Koji Kondo’s Wikidata entry, which provides a stable authority reference that can be reused across different catalogues and projects. The <code>&lt;sourceDesc&gt;</code> section records the transcription's origin, enabling future users to trace the edition and context of this digital score.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>3. Validation with MEI Friend</h2>
+        <p>
+            To ensure that my MEI header complied with the official MEI metadata standards, I edited and validated the file using <strong>MEI Friend</strong>. These tools highlight structural and attribute errors (for example, misplaced elements or unsupported attributes) with red underlining, making it easier to correct mistakes.
+        </p>
+        <p>
+            After several iterations adjusting the placement of <code>&lt;fileDesc&gt;</code>, <code>&lt;pubStmt&gt;</code>, <code>&lt;sourceDesc&gt;</code>, and <code>&lt;workDesc&gt;</code>, I was able to create a header structure that validates cleanly against the MEI schema, with no remaining error markers.
+        </p>
+
+        <div class="task-image-block">
+            <img src="data/meifriendeditor.png" alt="MEI validation screenshot (no errors)">
+            <figcaption>Figure: MEI Friend showing a validated MEI header without errors.</figcaption>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>4. Reflection</h2>
+        <p>
+            This task highlighted the importance of well-structured metadata in digital music archives. Even though the musical content of the piece did not change, enriching the MEI header with a clear schema, authority-linked names, and source information fundamentally improved the file's reusability.
+        </p>
+        <p>
+            By designing a schema that includes <strong>title, composer, arranger, publisher, date, and source URI</strong>, and by encoding additional musical descriptors such as genre, key, and meter, I have created a template that can be reused across other Zelda-related scores. This will be especially useful in later weeks when I begin to use this metadata on the web and combine it with other analytical outputs.
+        </p>
+		
+    </div>
 
 </section>
 
