@@ -302,8 +302,8 @@
    
 <section class="hero">
     <div>
-      <h1>Week 7 – </h1>
-        <p>???</p>
+      <h1>Week 7 –  Metadata Revision & Web Rendering with Verovio</h1>
+        <p>Refining MEI metadata and rendering music scores directly in the browser with Verovio.</p>
           <a href="#content" class="cta-btn">Scroll Down to Explore Week 7 IL Tasks</a>
     </div>
     </section>
@@ -312,7 +312,128 @@
 <!-- Week 7 Content Section -->
 <section id="content" class="container">
 
+  <div class="section">
+	<h1>Metadata Revision & Verovio</h1>
+    <p>
+      This week's task focused on revising and enriching the metadata of my MEI file and displaying it on a webpage using Verovio. I updated my Week 5 MEI file with improved metadata, including genre classification and explicit licensing, and embedded it in my website using the Verovio engine.
+    </p>
+  </div>
 
+  <div class="section">
+    <h2>1. Revising My MEI Metadata</h2>
+
+    <h3>1.1 Creating the Updated MEI File</h3>
+    <p>
+      Using the original Week 5 MEI file, I saved a new version titled 
+      <strong>week7meiver2_zelda-great-fairy-fountain-piano-etude-music-by-koji-kondo-arrangement-by-erik-c-piano-man-page1.mei</strong>. This new version includes two main 
+      improvements: <strong>genre classification</strong> and explicit 
+      <strong>licensing information</strong>.
+    </p>
+
+    <p><strong>✔ Genre Classification Added:</strong></p>
+    <pre style="background:#efefef; padding:12px; border-radius:8px;">
+&lt;notesStmt&gt;
+   &lt;note type="genre"&gt;
+      Video game music; Piano arrangement; 1980s–present Nintendo franchise
+   &lt;/note&gt;
+&lt;/notesStmt&gt;
+    </pre>
+
+    <p><strong>✔ Licensing Information (Creative Commons BY-NC 4.0):</strong></p>
+    <pre style="background:#efefef; padding:12px; border-radius:8px;">
+&lt;availability&gt;
+   &lt;licence target="https://creativecommons.org/licenses/by-nc/4.0/"&gt;
+      CC BY-NC 4.0 – This encoding may be shared and adapted for non-commercial educational use.
+   &lt;/licence&gt;
+&lt;/availability&gt;
+    </pre>
+
+    <h3>1.2 Why These Metadata Choices?</h3>
+		<p>
+  		<strong>Genre:</strong> I classified this piece as <em>video game music</em> because it is derived from Koji Kondo’s score for <em>The Legend of Zelda</em>. This franchise has played a central role in shaping Nintendo's musical identity since the 1980s. The secondary label <em>piano arrangement</em> is also important because the MEI file does not encode the original in-game chiptune audio, but a contemporary fan-created etude that stylistically expands upon Kondo’s motif. Specifying both the franchise context and the arranged medium allows users to understand better the piece's transmission history and how it moved from 8-bit sound hardware to a modern interpretive piano setting. This also shows the essential for digital musicology work that deals with versioning, arrangement lineage, and source transparency.
+		</p>
+		<p>
+  		<strong>Licensing:</strong> I selected the Creative Commons <strong>CC BY-NC 4.0</strong> licence because it balances accessibility with responsible reuse. The MEI file constitutes a derivative encoding that combines elements from a publicly shared fan arrangement with my own editorial corrections and manual corrections. As such, it should remain freely available for learning, teaching, and scholarly analysis, but should not be repurposed for commercial use. The BY-NC licence achieves this by allowing users to copy, distribute, and adapt the material provided that attribution is given and no commercial use is made. This aligns with typical practice in digital humanities archiving, where transparency, openness, and ethical sharing are prioritised while protecting creators from any unapproved monetisation of their contributions.
+		</p>
+  </div>
+
+  <div class="section">
+    <h2>2. Rendering the MEI File in HTML Using Verovio</h2>
+
+    <p>
+      To display updated metadata and notation simultaneously, I embedded my revised MEI file into an HTML page using the Verovio JavaScript toolkit.
+    </p>
+
+    <h3>2.1 Updating <em>metaRAW.html</em></h3>
+    <p>
+      In <strong>metaRAW.html</strong>, I replaced the old example file path with my new MEI v2:
+    </p>
+
+    <pre style="background:#efefef; padding:12px; border-radius:8px;">
+vrvToolkit.loadFile("data/week7meiver2_zelda-great-fairy-fountain-piano-etude-music-by-koji-kondo-arrangement-by-erik-c-piano-man-page1.mei");
+    </pre>
+
+    <p>
+      After committing the change, the webpage displayed:
+    </p>
+
+    <ul>
+      <li>The unformatted metadata (raw XML)</li>
+      <li>The rendered musical notation using Verovio</li>
+    </ul>
+
+    <h3>2.2 Screenshot of metaRAW Output</h3>
+
+    <div class="task-image-block">
+      <img src="data/metaRAW Output.png" alt="Raw MEI metadata displayed in Verovio HTML page">
+      <figcaption>Example of raw MEI metadata and Verovio rendering.</figcaption>
+    </div>
+
+    <h3>2.3 Access to the Revised MEI File</h3>
+
+    <p><strong>Download MEI v2 File:</strong></p>
+    <p>
+      <a href="YOUR_GITHUB_MEI_LINK_HERE" target="_blank" style="color:#1A2B4C; font-weight:bold; text-decoration:underline;">
+        week7meiver2_zelda-great-fairy-fountain-piano-etude-music-by-koji-kondo-arrangement-by-erik-c-piano-man-page1.mei
+      </a>
+    </p>
+
+    <p><strong>View metaRAW output on GitHub Repository:</strong></p>
+    <p>
+      <a href="https://github.com/2742018/Music-Curation-and-Analytics-2025/blob/57a1d7f30831c598ba922315cb5f8f6984108dc3/metaRAW.html" target="_blank" style="color:#1A2B4C; font-weight:bold; text-decoration:underline;">
+        /data/ folder in MCA-2024 Repository
+      </a>
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>3. Formatting Considerations</h2>
+		<p>
+			At this stage, the metadata is displayed as unformatted XML text above the Verovio-rendered score. This presentation is difficult for non-specialist users to read and does not reflect typical archival or catalogue standards. To make the metadata more usable and visually coherent, I would implement several formatting improvements:
+		</p>
+
+		<ul>
+  			<li><strong>Apply CSS styling</strong> to visually distinguish key metadata categories (e.g., title, composer, genre, licence). This would allow each field to be presented with appropriate hierarchy, spacing, and emphasis.
+  		</li>
+  		<li></li><strong>Convert the metadata into structured blocks or card-style catalogue entries</strong>, mirroring the format used in digital library interfaces. This would make the information easier to scan and interpret at a glance.
+  		</li>
+		<li><strong>Use collapsible sections</strong> for longer or more technical fields, such as editorial notes or licensing statements. This maintains readability while still preserving all the details without taking up too much space.
+  		</li>
+  		<li><strong>Link authority-controlled names</strong> (e.g., Koji Kondo, Nintendo) to external databases such as VIAF, MusicBrainz, or the Zelda Wiki. This enhances discoverability and situates the metadata within wider information networks.
+  		</li>
+	</ul>
+
+	<p>For this project, a CSS-based solution is the most practical. It is lightweight, reliable, and appropriate for a static archival website. CSS also maintains long-term browser compatibility, whereas JavaScript-based rendering would require ongoing maintenance and more complex scripting to dynamically parse the MEI header. 
+	</p>
+  
+  </div>
+
+  <div class="section">
+    <h2>4. Reflection</h2>
+    <p>
+      Updating my MEI metadata and rendering it on a webpage has strengthened my understanding of curatorial responsibility in digital music archiving. Metadata helps shape how future users interpret and ethically reuse the material. The Verovio interface demonstrates how encoded music can be made accessible, interactive, and meaningful across different levels of technical expertise.
+    </p>
+  </div>
 
 </section>
 
@@ -320,7 +441,7 @@
 	
     <section class="quick-links">
         <h2>Click the link below to continue exploring the portfolio</h2>
-        <a href="labworkweek7.html" class="button"> Week 7 IL Tasks</a>
+        <a href="labworkweek8.html" class="button"> Week 8 IL Tasks</a>
     </section>
 
 <!-- Footer Section -->
