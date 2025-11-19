@@ -10,7 +10,28 @@
 <body>
   <div id="MEImeta"></div>
   <div id="app" class="panel" style="border: 1px solid light gray; min-height: 800px;">Verovio is loading...</div>
-  <div><p>[Discuss how you would format your metadata here]</p></div>
+  <div><p>
+
+    <p>Formatting Considerations</p>
+		<p>
+			At this stage, the metadata is displayed as unformatted XML text above the Verovio-rendered score. This presentation is difficult for non-specialist users to read and does not reflect typical archival or catalogue standards. To make the metadata more usable and visually coherent, I would implement several formatting improvements:
+		</p>
+
+		<ul>
+  			<li><strong>Apply CSS styling</strong> to visually distinguish key metadata categories (e.g., title, composer, genre, licence). This would allow each field to be presented with appropriate hierarchy, spacing, and emphasis.
+  			</li>
+  		  <li><strong>Convert the metadata into structured blocks or card-style catalogue entries</strong>, mirroring the format used in digital library interfaces. This would make the information easier to scan and interpret at a glance.
+  		  </li>
+		    <li><strong>Use collapsible sections</strong> for longer or more technical fields, such as editorial notes or licensing statements. This maintains readability while still preserving all the details without taking up too much space.
+  		  </li>
+  		  <li><strong>Link authority-controlled names</strong> (e.g., Koji Kondo, Nintendo) to external databases such as VIAF, MusicBrainz, or the Zelda Wiki. This enhances discoverability and situates the metadata within wider information networks.
+  		  </li>
+	  </ul>
+
+	<p>For this project, a CSS-based solution is the most practical. It is lightweight, reliable, and appropriate for a static archival website. CSS also maintains long-term browser compatibility, whereas JavaScript-based rendering would require ongoing maintenance and more complex scripting to dynamically parse the MEI header. 
+	</p>
+    
+  </p></div>
   <script type="module">
       import 'https://www.verovio.org/javascript/app/verovio-app.js';
         const app = new Verovio.App(document.getElementById("app"), {});
