@@ -250,23 +250,16 @@
       		text-align: left;
    		}
 
-	 	.zoom-modal{
+ 		.zoom-modal{
       		position:fixed; inset:0;
       		background:rgba(0,0,0,.8);
-      		display:block;              
-    		pointer-events:none;         
-    		visibility:hidden;                
+      		display:none;               
       		align-items:center; justify-content:center;
       		z-index:9999;
     	}
+    		
+		.zoom-modal.open{ display:flex; }
     
-		  .zoom-modal.open{
-    	  	pointer-events:auto;
-    		visibility:visible;
-    		opacity:1;
-    		display:flex;             
-  		}
-		
 		.zoom-stage{
       		position:relative;
       		width: min(95vw, 1600px);
@@ -275,7 +268,7 @@
       		overflow:hidden;
       		border-radius:12px;
       		box-shadow:0 10px 30px rgba(0,0,0,.4);
-      		touch-action:none;          
+      		touch-action:none;         
     	}
     
 		.zoom-img{
@@ -285,20 +278,21 @@
       		user-select:none; -webkit-user-drag:none; pointer-events:none;
       		max-width:none;              
     	}
-		
-    	.zoom-ui{
+    
+		.zoom-ui{
       		position:absolute; right:12px; bottom:12px; display:flex; gap:8px;
     	}
-    	
+    
 		.zoom-btn{
       		background:rgba(59, 59, 59,.5);
       		color:#fff; border:1px solid rgba(255,255,255,.25);
       		padding:8px 12px; border-radius:8px; cursor:pointer; font-family:'Montserrat',sans-serif;
       		backdrop-filter: blur(6px);
     	}
-		
-    	.zoom-btn:hover{ background:rgba(128, 128, 128,.2); }
+    
+		.zoom-btn:hover{ background:rgba(128, 128, 128,.2); }
 
+		
 	/* Quick Links Section */
         .quick-links {
             background-color: #FCE0E3;
@@ -585,6 +579,8 @@
     	<img class="zoomable" src="data/week8_kakariko_spectrogram.png" alt="Kakariko Village (Night) spectrogram">
     	<figcaption>Kakariko Village (Night) — Spectrogram</figcaption>
   	</figure>
+  
+  </div>
 
 	<div id="zoomModal" class="zoom-modal" aria-hidden="true">
   		<div class="zoom-stage" role="dialog" aria-modal="true" aria-label="Zoomed image viewer">
@@ -596,10 +592,7 @@
       <button id="zoomCloseBtn" class="zoom-btn" type="button">Close</button>
     </div>
   </div>
-</div>
-
-  </div>
-
+</div>	
 	
 
 <!-- Quick Links to Weekly Analysis -->
@@ -666,25 +659,34 @@
       ty = Math.min(maxY, Math.max(-maxY, ty));
     }
 
-    function zoomAt(cx, cy, dir){
-    if (!isOpen()) return;             
+    function zoomAt(clientX, clientY, delta){
       const rect = stage.getBoundingClientRect();
       const cx = clientX - rect.left - rect.width/2 - tx;
       const cy = clientY - rect.top  - rect.height/2 - ty;
       const prev = scale;
       scale = Math.min(Z_MAX, Math.max(Z_MIN, scale * (delta>0 ? (1+STEP) : (1-STEP))));
+      // Adjust translation so the point under cursor stays under cursor
       const k = (scale/prev) - 1;
       tx -= cx * k; ty -= cy * k;
       clampPan(); applyTransform();
     }
 
-  	document.querySelectorAll('img.zoomable').forEach(el=>{
-    	el.addEventListener('click', ()=> openModal(el.getAttribute('data-zoom-src') || el.src, el.alt));
-  	});
+    document.querySelectorAll('img.zoomable').forEach(el=>{
+      el.addEventListener('click', ()=> openModal(el.getAttribute('data-zoom-src') || el.src, el.alt));
+    });
 
-  	function onDown(e){ if(!isOpen()) return; dragging=true; const p=e.touches?e.touches[0]:e; startX=p.clientX - tx; startY=p.clientY - ty; }
-  	function onMove(e){ if(!isOpen() || !dragging) return; const p=e.touches?e.touches[0]:e; tx=p.clientX - startX; ty=p.clientY - startY; clampPan(); applyTransform(); }
-  	function onUp(){ dragging=false; }
+    function onDown(e){
+      dragging = true;
+      const p = e.touches ? e.touches[0] : e;
+      startX = p.clientX - tx; startY = p.clientY - ty;
+    }
+    function onMove(e){
+      if(!dragging) return;
+      const p = e.touches ? e.touches[0] : e;
+      tx = p.clientX - startX; ty = p.clientY - startY;
+      clampPan(); applyTransform();
+    }
+    function onUp(){ dragging=false; }
 
     stage.addEventListener('mousedown', onDown);
     window.addEventListener('mousemove', onMove);
@@ -693,25 +695,27 @@
     stage.addEventListener('touchmove', onMove, {passive:false});
     stage.addEventListener('touchend', onUp);
 
-  stage.addEventListener('wheel', (e)=>{ if(!isOpen()) return; e.preventDefault(); zoomAt(e.clientX, e.clientY, e.deltaY<0?+1:-1); }, {passive:false});
+    stage.addEventListener('wheel', (e)=>{
+      e.preventDefault();
+      zoomAt(e.clientX, e.clientY, e.deltaY < 0 ? +1 : -1);
+    }, {passive:false});
 
-  const center = () => {
-    const r = stage.getBoundingClientRect();
-    return { x: r.left + r.width/2, y: r.top + r.height/2 };
-  };
-  btnIn?.addEventListener('click', ()=>{ const c=center(); zoomAt(c.x, c.y, +1); });
-  btnOut?.addEventListener('click',()=>{ const c=center(); zoomAt(c.x, c.y, -1); });
-  btnReset?.addEventListener('click', fitToStage);
-  btnClose?.addEventListener('click', closeModal);
+    btnIn.addEventListener('click', ()=> zoomAt(stage.getBoundingClientRect().left + stage.clientWidth/2, stage.getBoundingClientRect().top + stage.clientHeight/2, +1));
+    btnOut.addEventListener('click',()=> zoomAt(stage.getBoundingClientRect().left + stage.clientWidth/2, stage.getBoundingClientRect().top + stage.clientHeight/2, -1));
+    btnReset.addEventListener('click', fitToStage);
+    btnClose.addEventListener('click', closeModal);
 
-  modal.addEventListener('click', (e)=>{ if(e.target === modal) closeModal(); });
-  window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape' && isOpen()) closeModal(); });
-
-  window.addEventListener('hashchange', closeModal);
-  window.addEventListener('beforeunload', closeModal);
-
-  window.addEventListener('resize', ()=> { if(isOpen()) fitToStage(); });
-})();
+    modal.addEventListener('click', (e)=>{ if(e.target === modal) closeModal(); });
+    window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeModal(); });
+    stage.addEventListener('dblclick', (e)=>{
+      e.preventDefault();
+      const targetScale = (scale <= 1.5) ? 2 : 1;
+      const direction = (targetScale > scale) ? +1 : -1;
+      scale = targetScale; applyTransform();
+      zoomAt(e.clientX, e.clientY, direction);
+    });
+    window.addEventListener('resize', ()=> { if(modal.classList.contains('open')) fitToStage(); });
+  })();
 </script>
 
 </body>
