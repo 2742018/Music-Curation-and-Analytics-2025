@@ -209,24 +209,23 @@
             gap: 20px;
         }
 		
-   		.task-image-block {
-    		margin: 16px auto 0 auto; 
-    		max-width: 820px;        
-  		}
-  
-		.task-image-block img {
-    		width: 100%;
-    		height: auto;
-    		display: block;
-    		border-radius: 12px;
-    		box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-  		}
-  		.task-image-block figcaption {
-    		font-size: 0.95rem;
-    		color: #555;
-    		text-align: center;
-    		margin-top: 8px;
-  		}
+		.task-image-block{
+      		margin:16px auto 0;
+      		max-width: min(1200px, 100%);    /* wider than old 820px */
+    	}
+    	
+		.task-image-block img{
+      		width:100%;
+      		height:auto;
+      		display:block;
+      		border-radius:12px;
+      		box-shadow:0 6px 18px rgba(0,0,0,.15);
+      		cursor: zoom-in;             
+    	}
+    
+		.task-image-block figcaption{
+      		font-size:.95rem; color:#555; text-align:center; margin-top:8px;
+    	}
 
    		 :root { --meta-col: 14rem; } 
 
@@ -250,6 +249,49 @@
       		background: #eee;
       		text-align: left;
    		}
+
+	 	.zoom-modal{
+      		position:fixed; inset:0;
+      		background:rgba(0,0,0,.8);
+      		display:none;                 
+      		align-items:center; justify-content:center;
+      		z-index:9999;
+    	}
+    
+		.zoom-modal.open{ display:flex; }
+    
+		
+		.zoom-stage{
+      		position:relative;
+      		width: min(95vw, 1600px);
+      		height: min(90vh, 900px);
+      		background:#111;
+      		overflow:hidden;
+      		border-radius:12px;
+      		box-shadow:0 10px 30px rgba(0,0,0,.4);
+      		touch-action:none;          
+    	}
+    
+		.zoom-img{
+      		position:absolute; top:50%; left:50%;
+      		transform: translate(-50%,-50%) scale(1);
+      		transform-origin: center center;
+      		user-select:none; -webkit-user-drag:none; pointer-events:none;
+      		max-width:none;              
+    	}
+		
+    	.zoom-ui{
+      		position:absolute; right:12px; bottom:12px; display:flex; gap:8px;
+    	}
+    	
+		.zoom-btn{
+      		background:rgba(255,255,255,.1);
+      		color:#fff; border:1px solid rgba(255,255,255,.25);
+      		padding:8px 12px; border-radius:8px; cursor:pointer; font-family:'Montserrat',sans-serif;
+      		backdrop-filter: blur(6px);
+    	}
+		
+    	.zoom-btn:hover{ background:rgba(255,255,255,.2); }
 
 	/* Quick Links Section */
         .quick-links {
@@ -508,50 +550,42 @@
     </ul>
     <p>These images were exported as PNG files and uploaded to my GitHub repository.</p>
 
-    <!-- GERUDO VALLEY -->
     <h3>2.1 Gerudo Valley</h3>
 
-    <div class="task-image-block">
-      <img src="data/week8_gerudo_waveform.png" alt="Gerudo Valley waveform">
-      <figcaption>Gerudo Valley — Waveform</figcaption>
-    </div>
+  	<figure class="task-image-block full-bleed">
+    	<img class="zoomable" src="data/week8_gerudo_waveform.png" alt="Gerudo Valley waveform">
+    	<figcaption>Gerudo Valley — Waveform</figcaption>
+  	</figure>
+  	<figure class="task-image-block full-bleed">
+    	<img class="zoomable" src="data/week8_gerudo_spectrogram.png" alt="Gerudo Valley spectrogram">
+    	<figcaption>Gerudo Valley — Spectrogram</figcaption>
+  	</figure>
 
-    <div class="task-image-block">
-      <img src="data/week8_gerudo_spectrogram.png" alt="Gerudo Valley spectrogram">
-      <figcaption>Gerudo Valley — Spectrogram</figcaption>
-    </div>
-
-    <!-- MIDNA’S LAMENT -->
     <h3>2.2 Midna’s Lament</h3>
 
-    <div class="task-image-block">
-      <img src="data/week8_midna_waveform.png" alt="Midna’s Lament waveform">
-      <figcaption>Midna’s Lament — Waveform</figcaption>
-    </div>
+ 	<figure class="task-image-block full-bleed">
+    	<img class="zoomable" src="data/week8_midna_waveform.png" alt="Midna’s Lament waveform">
+    	<figcaption>Midna’s Lament — Waveform</figcaption>
+  	</figure>
+  	<figure class="task-image-block full-bleed">
+    	<img class="zoomable" src="data/week8_midna_spectrogram.png" alt="Midna’s Lament spectrogram">
+    	<figcaption>Midna’s Lament — Spectrogram</figcaption>
+  	</figure>
 
-    <div class="task-image-block">
-      <img src="data/week8_midna_spectrogram.png" alt="Midna’s Lament spectrogram">
-      <figcaption>Midna’s Lament — Spectrogram</figcaption>
-    </div>
-
-    <!-- HATENO VILLAGE -->
     <h3>2.3 Hateno Village (Day)</h3>
 
-    <div class="task-image-block">
-      <img src="data/week8_kakariko_waveform.png" alt="Hateno Village waveform">
-      <figcaption>Kakariko Village (Night) — Waveform</figcaption>
-    </div>
+  	<figure class="task-image-block full-bleed">
+    	<img class="zoomable" src="data/week8_kakariko_waveform.png" alt="Kakariko Village (Night) waveform">
+    	<figcaption>Kakariko Village (Night) — Waveform</figcaption>
+  	</figure>
+  	<figure class="task-image-block full-bleed">
+    	<img class="zoomable" src="data/week8_kakariko_spectrogram.png" alt="Kakariko Village (Night) spectrogram">
+    	<figcaption>Kakariko Village (Night) — Spectrogram</figcaption>
+  	</figure>
 
-    <div class="task-image-block">
-      <img src="data/week8_kakariko_spectrogram.png" alt="Hateno Village spectrogram">
-      <figcaption>Kakariko Village (Night) — Spectrogram</figcaption>
-    </div>
   </div>
 
  
-
-</section>
-
 <!-- Quick Links to Weekly Analysis -->
 	
     <section class="quick-links">
@@ -565,6 +599,114 @@
         <p>&copy; 2025 Portfolio for Music Curation and Analytics - Koji Kondo in The Legend of Zelda video game franchise. 
 			2742018. All rights reserved.</p>
     </footer>
+
+
+<script>
+  (function(){
+    const modal   = document.getElementById('zoomModal');
+    const stage   = modal.querySelector('.zoom-stage');
+    const img     = document.getElementById('zoomImg');
+    const btnIn   = document.getElementById('zoomInBtn');
+    const btnOut  = document.getElementById('zoomOutBtn');
+    const btnReset= document.getElementById('zoomResetBtn');
+    const btnClose= document.getElementById('zoomCloseBtn');
+
+    const Z_MIN = 1, Z_MAX = 6, STEP = 0.2;
+    let scale = 1, tx = 0, ty = 0;   
+    let startX=0, startY=0, dragging=false;
+
+    function openModal(src, alt){
+      img.src = src; img.alt = alt || '';
+      scale = 1; tx = 0; ty = 0;
+      applyTransform();
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      requestAnimationFrame(fitToStage);
+    }
+
+    function closeModal(){
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      img.src = '';
+    }
+
+    function applyTransform(){
+      img.style.transform = `translate(calc(-50% + ${tx}px), calc(-50% + ${ty}px)) scale(${scale})`;
+    }
+
+    function fitToStage(){
+      if (!img.naturalWidth) return;
+      const sw = stage.clientWidth, sh = stage.clientHeight;
+      const iw = img.naturalWidth, ih = img.naturalHeight;
+      const fit = Math.min(sw/iw, sh/ih);
+      scale = Math.max(Z_MIN, fit); tx = 0; ty = 0; applyTransform();
+    }
+
+    function clampPan(){
+      const sw = stage.clientWidth, sh = stage.clientHeight;
+      const iw = img.naturalWidth * scale, ih = img.naturalHeight * scale;
+      const maxX = Math.max(0, (iw - sw)/2), maxY = Math.max(0, (ih - sh)/2);
+      tx = Math.min(maxX, Math.max(-maxX, tx));
+      ty = Math.min(maxY, Math.max(-maxY, ty));
+    }
+
+    function zoomAt(clientX, clientY, delta){
+      const rect = stage.getBoundingClientRect();
+      const cx = clientX - rect.left - rect.width/2 - tx;
+      const cy = clientY - rect.top  - rect.height/2 - ty;
+      const prev = scale;
+      scale = Math.min(Z_MAX, Math.max(Z_MIN, scale * (delta>0 ? (1+STEP) : (1-STEP))));
+      const k = (scale/prev) - 1;
+      tx -= cx * k; ty -= cy * k;
+      clampPan(); applyTransform();
+    }
+
+    document.querySelectorAll('img.zoomable').forEach(el=>{
+      el.addEventListener('click', ()=> openModal(el.getAttribute('data-zoom-src') || el.src, el.alt));
+    });
+
+    function onDown(e){
+      dragging = true;
+      const p = e.touches ? e.touches[0] : e;
+      startX = p.clientX - tx; startY = p.clientY - ty;
+    }
+    function onMove(e){
+      if(!dragging) return;
+      const p = e.touches ? e.touches[0] : e;
+      tx = p.clientX - startX; ty = p.clientY - startY;
+      clampPan(); applyTransform();
+    }
+    function onUp(){ dragging=false; }
+
+    stage.addEventListener('mousedown', onDown);
+    window.addEventListener('mousemove', onMove);
+    window.addEventListener('mouseup', onUp);
+    stage.addEventListener('touchstart', onDown, {passive:false});
+    stage.addEventListener('touchmove', onMove, {passive:false});
+    stage.addEventListener('touchend', onUp);
+
+    stage.addEventListener('wheel', (e)=>{
+      e.preventDefault();
+      zoomAt(e.clientX, e.clientY, e.deltaY < 0 ? +1 : -1);
+    }, {passive:false});
+
+    btnIn.addEventListener('click', ()=> zoomAt(stage.getBoundingClientRect().left + stage.clientWidth/2, stage.getBoundingClientRect().top + stage.clientHeight/2, +1));
+    btnOut.addEventListener('click',()=> zoomAt(stage.getBoundingClientRect().left + stage.clientWidth/2, stage.getBoundingClientRect().top + stage.clientHeight/2, -1));
+    btnReset.addEventListener('click', fitToStage);
+    btnClose.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', (e)=>{ if(e.target === modal) closeModal(); });
+    window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeModal(); });
+    stage.addEventListener('dblclick', (e)=>{
+      e.preventDefault();
+      const targetScale = (scale <= 1.5) ? 2 : 1;
+      const direction = (targetScale > scale) ? +1 : -1;
+      scale = targetScale; applyTransform();
+      zoomAt(e.clientX, e.clientY, direction);
+    });
+    window.addEventListener('resize', ()=> { if(modal.classList.contains('open')) fitToStage(); });
+  })();
+</script>
 
 </body>
 </html>
