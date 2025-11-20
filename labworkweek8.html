@@ -227,7 +227,30 @@
     		text-align: center;
     		margin-top: 8px;
   		}
+
+   		 :root { --meta-col: 18rem; } 
+
+   		 .meta-table {
+      		width: 100%;
+      		border-collapse: collapse;
+      		table-layout: fixed;    
+      		margin-top: 20px;
+   		}
 		
+    	.meta-table col.meta   { width: var(--meta-col); }
+    	.meta-table col.track  { width: calc((100% - var(--meta-col)) / 3); }
+
+    	.meta-table th, .meta-table td {
+      		padding: 10px;
+      		border: 1px solid #ccc;
+      		vertical-align: top;
+    	}
+		
+    	.meta-table thead th {
+      		background: #eee;
+      		text-align: left;
+   		}
+
 	/* Quick Links Section */
         .quick-links {
             background-color: #FCE0E3;
@@ -388,13 +411,22 @@
 	<h3>1.2 Technical Metadata Table</h3>
     <p><em>List of the most important technical and non-technical metadata associated with each track.</em></p>
 
-    <table style="width:100%; border-collapse:collapse; margin-top:20px;">
-      <tr style="background:#eee;">
-        <th style="padding:10px; border:1px solid #ccc;">...</th>
-        <th style="padding:10px; border:1px solid #ccc;">Gerudo Valley — Ocarina of Time (1998)</th>
-        <th style="padding:10px; border:1px solid #ccc;">Midna’s Lament — Twilight Princess (2006)</th>
-        <th style="padding:10px; border:1px solid #ccc;">Kakariko Village (Night) — Breath of the Wild (2017)</th>
-      </tr>
+<table class="meta-table"; style="width:100%; border-collapse:collapse; margin-top:20px;">
+  <colgroup>
+    <col class="meta">
+    <col class="track">
+    <col class="track">
+    <col class="track">
+  </colgroup>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Gerudo Valley — Ocarina of Time (1998)</th>
+      <th>Midna’s Lament — Twilight Princess (2006)</th>
+      <th>Kakariko Village (Night) — Breath of the Wild (2017)</th>
+    </tr>
+  </thead>
+	  <tbody>
       <tr>
         <td style="padding:10px; border:1px solid #ccc;">Title</td>
         <td style="padding:10px; border:1px solid #ccc;">Gerudo Valley</td>
@@ -461,8 +493,13 @@
         <td style="padding:10px; border:1px solid #ccc;">3:08</td>
         <td style="padding:10px; border:1px solid #ccc;">4:32</td>
       </tr>
+	  </tbody>
     </table>
+	  
   </div>
+
+
+
 
 
 
