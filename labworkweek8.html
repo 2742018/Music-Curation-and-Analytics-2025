@@ -253,13 +253,19 @@
 	 	.zoom-modal{
       		position:fixed; inset:0;
       		background:rgba(0,0,0,.8);
-      		display:none;                 
+      		display:block;              
+    		pointer-events:none;         
+    		visibility:hidden;                
       		align-items:center; justify-content:center;
       		z-index:9999;
     	}
     
-		.zoom-modal.open{ display:flex; }
-    
+		  .zoom-modal.open{
+    	  	pointer-events:auto;
+    		visibility:visible;
+    		opacity:1;
+    		display:flex;             
+  		}
 		
 		.zoom-stage{
       		position:relative;
@@ -660,7 +666,8 @@
       ty = Math.min(maxY, Math.max(-maxY, ty));
     }
 
-    function zoomAt(clientX, clientY, delta){
+    function zoomAt(cx, cy, dir){
+    if (!isOpen()) return;             
       const rect = stage.getBoundingClientRect();
       const cx = clientX - rect.left - rect.width/2 - tx;
       const cy = clientY - rect.top  - rect.height/2 - ty;
@@ -671,22 +678,13 @@
       clampPan(); applyTransform();
     }
 
-    document.querySelectorAll('img.zoomable').forEach(el=>{
-      el.addEventListener('click', ()=> openModal(el.getAttribute('data-zoom-src') || el.src, el.alt));
-    });
+  	document.querySelectorAll('img.zoomable').forEach(el=>{
+    	el.addEventListener('click', ()=> openModal(el.getAttribute('data-zoom-src') || el.src, el.alt));
+  	});
 
-    function onDown(e){
-      dragging = true;
-      const p = e.touches ? e.touches[0] : e;
-      startX = p.clientX - tx; startY = p.clientY - ty;
-    }
-    function onMove(e){
-      if(!dragging) return;
-      const p = e.touches ? e.touches[0] : e;
-      tx = p.clientX - startX; ty = p.clientY - startY;
-      clampPan(); applyTransform();
-    }
-    function onUp(){ dragging=false; }
+  	function onDown(e){ if(!isOpen()) return; dragging=true; const p=e.touches?e.touches[0]:e; startX=p.clientX - tx; startY=p.clientY - ty; }
+  	function onMove(e){ if(!isOpen() || !dragging) return; const p=e.touches?e.touches[0]:e; tx=p.clientX - startX; ty=p.clientY - startY; clampPan(); applyTransform(); }
+  	function onUp(){ dragging=false; }
 
     stage.addEventListener('mousedown', onDown);
     window.addEventListener('mousemove', onMove);
@@ -695,27 +693,25 @@
     stage.addEventListener('touchmove', onMove, {passive:false});
     stage.addEventListener('touchend', onUp);
 
-    stage.addEventListener('wheel', (e)=>{
-      e.preventDefault();
-      zoomAt(e.clientX, e.clientY, e.deltaY < 0 ? +1 : -1);
-    }, {passive:false});
+  stage.addEventListener('wheel', (e)=>{ if(!isOpen()) return; e.preventDefault(); zoomAt(e.clientX, e.clientY, e.deltaY<0?+1:-1); }, {passive:false});
 
-    btnIn.addEventListener('click', ()=> zoomAt(stage.getBoundingClientRect().left + stage.clientWidth/2, stage.getBoundingClientRect().top + stage.clientHeight/2, +1));
-    btnOut.addEventListener('click',()=> zoomAt(stage.getBoundingClientRect().left + stage.clientWidth/2, stage.getBoundingClientRect().top + stage.clientHeight/2, -1));
-    btnReset.addEventListener('click', fitToStage);
-    btnClose.addEventListener('click', closeModal);
+  const center = () => {
+    const r = stage.getBoundingClientRect();
+    return { x: r.left + r.width/2, y: r.top + r.height/2 };
+  };
+  btnIn?.addEventListener('click', ()=>{ const c=center(); zoomAt(c.x, c.y, +1); });
+  btnOut?.addEventListener('click',()=>{ const c=center(); zoomAt(c.x, c.y, -1); });
+  btnReset?.addEventListener('click', fitToStage);
+  btnClose?.addEventListener('click', closeModal);
 
-    modal.addEventListener('click', (e)=>{ if(e.target === modal) closeModal(); });
-    window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeModal(); });
-    stage.addEventListener('dblclick', (e)=>{
-      e.preventDefault();
-      const targetScale = (scale <= 1.5) ? 2 : 1;
-      const direction = (targetScale > scale) ? +1 : -1;
-      scale = targetScale; applyTransform();
-      zoomAt(e.clientX, e.clientY, direction);
-    });
-    window.addEventListener('resize', ()=> { if(modal.classList.contains('open')) fitToStage(); });
-  })();
+  modal.addEventListener('click', (e)=>{ if(e.target === modal) closeModal(); });
+  window.addEventListener('keydown', (e)=>{ if(e.key === 'Escape' && isOpen()) closeModal(); });
+
+  window.addEventListener('hashchange', closeModal);
+  window.addEventListener('beforeunload', closeModal);
+
+  window.addEventListener('resize', ()=> { if(isOpen()) fitToStage(); });
+})();
 </script>
 
 </body>
