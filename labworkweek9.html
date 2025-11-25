@@ -286,12 +286,12 @@
                 <li><a href="labworkweek2.html">Week 2</a></li>
                 <li><a href="labworkweek3.html">Week 3</a></li>
                 <li><a href="labworkweek4.html">Week 4</a></li>
-				        <li><a href="labworkweek5.html">Week 5</a></li>
-				        <li><a href="labworkweek6.html">Week 6</a></li>
-				        <li><a href="labworkweek7.html">Week 7</a></li>
-				        <li><a href="labworkweek8.html">Week 8</a></li>
-				        <li><a href="labworkweek9.html">Week 9</a></li>
-				        <li><a href="labworkweek10.html">Week 10</a></li>
+				<li><a href="labworkweek5.html">Week 5</a></li>
+				<li><a href="labworkweek6.html">Week 6</a></li>
+				<li><a href="labworkweek7.html">Week 7</a></li>
+				<li><a href="labworkweek8.html">Week 8</a></li>
+				<li><a href="labworkweek9.html">Week 9</a></li>
+				<li><a href="labworkweek10.html">Week 10</a></li>
             </ul>
         </div>
         <a href="reflection.html">Conclusion / Reflection</a>
@@ -302,8 +302,8 @@
    
 <section class="hero">
     <div>
-      <h1>Week 9 – </h1>
-        <p>???</p>
+      <h1>Week 9 – Analysing and extracting data from audio</h1>
+        <p>Extracting Audio Features & Quantitative Analysis</p>
           <a href="#content" class="cta-btn">Scroll Down to Explore Week 9 IL Tasks</a>
     </div>
     </section>
@@ -312,6 +312,45 @@
 <!-- Week 9 Content Section -->
 <section id="content" class="container">
 
+<h1>Extracting Audio Features & Quantitative Analysis</h1>
+  <p>
+    This week focuses on extracting technical audio features from the three <em>Legend of Zelda</em> tracks that were used in Week 8. Using Sonic Visualiser, I exported <strong>Spectrogram</strong>, <strong>MFCCs</strong>, and <strong>Chromagram</strong> data for each track, then analysed them in Python.
+  </p>
+
+
+<h2>Task 1 – Extracted Features from Sonic Visualiser</h2>
+  <p>The three music selections are below. Access each feature’s audio, image, and CSV:</p>
+
+<style>
+    .feature-thumbs{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:12px 0 8px; }
+    .feature-thumbs figure{ margin:0; }
+    .feature-thumbs img{ width:100%; height:auto; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,.08); cursor:zoom-in; display:block; }
+    .feature-list{ margin:0; padding-left:18px; }
+</style>
+	
+ <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+    <!-- Track 1 Gerudo Valley — Ocarina of Time (1998)-->
+    <article class="track-card" style="background:#fff; border:1px solid #e5e5e5; border-radius:12px; padding:16px; box-shadow:0 4px 12px rgba(0,0,0,.05);">
+      <h3 style="margin-top:0;">Gerudo Valley <span style="font-weight:400;">(Ocarina of Time, 1998)</span></h3>
+      <p style="margin-top:-8px;">Latin-inflected orchestration with guitar and brass.</p>
+      <audio controls style="width:100%; margin:8px 0 14px;">
+        <source src="data/gerudo_valley.mp3" type="audio/mpeg" />
+      </audio>
+
+      <!-- Image -->
+      <div class="feature-thumbs">
+        <figure><img class="zoomable" src="data/week9_gerudovalley_spectrogram_image.png" alt="Gerudo Valley spectrogram"></figure>
+        <figure><img class="zoomable" src="data/week9_gerudovalley_mfccs_image.png" alt="Gerudo Valley MFCCs"></figure>
+        <figure><img class="zoomable" src="data/week9_gerudovalley_chromagram_imagefile.png" alt="Gerudo Valley chromagram"></figure>
+      </div>
+
+      <!-- Links (CSV) -->
+      <ul class="feature-list">
+        <li>Spectrogram (<a href="data/week9_gerudovalley_spectrogram_cvsfile.csv" target="_blank" rel="noopener noreferrer">CSV</a>)</li>
+        <li>MFCCs (<a href="data/week9_gerudovalley_mfccs_cvsfile.csv" target="_blank" rel="noopener noreferrer">CSV</a>)</li>
+        <li>Chromagram (<a href="data/week9_gerudovalley_chromagram_cvsfile.csv" target="_blank" rel="noopener noreferrer">CSV</a>)</li>
+      </ul>
+    </article>  
 
 
 </section>
