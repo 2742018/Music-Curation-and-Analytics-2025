@@ -302,7 +302,7 @@
    
 <section class="hero">
     <div>
-      <h1>Week 9 – Analysing and extracting data from audio</h1>
+      <h1>Week 9 – Analysing and extracting data</h1>
         <p>Extracting Audio Features & Quantitative Analysis</p>
           <a href="#content" class="cta-btn">Scroll Down to Explore Week 9 IL Tasks</a>
     </div>
@@ -312,7 +312,7 @@
 <!-- Week 9 Content Section -->
 <section id="content" class="container">
 
-<h1>Extracting Audio Features & Quantitative Analysis</h1>
+<h1>Analysing and extracting data from audio<</h1>
   <p>
     This week focuses on extracting technical audio features from the three <em>Legend of Zelda</em> tracks that were used in Week 8. Using Sonic Visualiser, I exported <strong>Spectrogram</strong>, <strong>MFCCs</strong>, and <strong>Chromagram</strong> data for each track, then analysed them in Python.
   </p>
@@ -321,36 +321,39 @@
 <h2>Task 1 – Extracted Features from Sonic Visualiser</h2>
   <p>The three music selections are below. Access each feature’s audio, image, and CSV:</p>
 
-<style>
-    .feature-thumbs{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:12px 0 8px; }
-    .feature-thumbs figure{ margin:0; }
-    .feature-thumbs img{ width:100%; height:auto; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,.08); cursor:zoom-in; display:block; }
-    .feature-list{ margin:0; padding-left:18px; }
-</style>
-	
- <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
-    <!-- Track 1 Gerudo Valley — Ocarina of Time (1998)-->
-    <article class="track-card" style="background:#fff; border:1px solid #e5e5e5; border-radius:12px; padding:16px; box-shadow:0 4px 12px rgba(0,0,0,.05);">
-      <h3 style="margin-top:0;">Gerudo Valley <span style="font-weight:400;">(Ocarina of Time, 1998)</span></h3>
-      <p style="margin-top:-8px;">Latin-inflected orchestration with guitar and brass.</p>
-      <audio controls style="width:100%; margin:8px 0 14px;">
-        <source src="data/gerudo_valley.mp3" type="audio/mpeg" />
-      </audio>
+  <style>
+    .track-block { background:#fff; border:1px solid #e5e5e5; border-radius:12px; padding:20px; margin:24px 0; box-shadow:0 4px 12px rgba(0,0,0,.05); }
+    .track-block h3 { margin:6px 0 8px; font-family:'Playfair Display',serif; color:#1A2B4C; }
+    .track-meta { margin-top:-6px; color:#555; font-size:1rem; }
+    .feature-row { margin:18px 0; }
+    .feature-row h4 { margin:0 0 8px; font-family:'Montserrat',sans-serif; font-size:1.1rem; color:#333; }
+    .feature-row a.csv-link { font-weight:600; color:#1A2B4C; text-decoration:underline; }
+    .feature-row a.csv-link:hover { color:#FF6F61; }
+    .analysis-img { width:100%; height:auto; display:block; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,.15); cursor:zoom-in; }
+  </style>
 
-      <!-- Image -->
-      <div class="feature-thumbs">
-        <figure><img class="zoomable" src="data/week9_gerudovalley_spectrogram_image.png" alt="Gerudo Valley spectrogram"></figure>
-        <figure><img class="zoomable" src="data/week9_gerudovalley_mfccs_image.png" alt="Gerudo Valley MFCCs"></figure>
-        <figure><img class="zoomable" src="data/week9_gerudovalley_chromagram_imagefile.png" alt="Gerudo Valley chromagram"></figure>
-      </div>
+  <!-- Track 1 Gerudo Valley — Ocarina of Time (1998)-->
+  <article class="track-block">
+    <h3>Gerudo Valley <span class="track-meta">(Ocarina of Time, 1998)</span></h3>
+    <audio controls style="width:100%; margin:8px 0 16px;">
+      <source src="data/gerudo_valley.mp3" type="audio/mpeg" />
+    </audio>
 
-      <!-- Links (CSV) -->
-      <ul class="feature-list">
-        <li>Spectrogram (<a href="data/week9_gerudovalley_spectrogram_cvsfile.csv" target="_blank" rel="noopener noreferrer">CSV</a>)</li>
-        <li>MFCCs (<a href="data/week9_gerudovalley_mfccs_cvsfile.csv" target="_blank" rel="noopener noreferrer">CSV</a>)</li>
-        <li>Chromagram (<a href="data/week9_gerudovalley_chromagram_cvsfile.csv" target="_blank" rel="noopener noreferrer">CSV</a>)</li>
-      </ul>
-    </article>  
+    <div class="feature-row">
+      <h4>Spectrogram (<a class="csv-link" href="data/week9_gerudovalley_spectrogram_cvsfile.csv" target="_blank" rel="noopener noreferrer">download CSV</a>)</h4>
+      <img class="analysis-img zoomable" src="data/week9_gerudovalley_spectrogram_image.png" alt="Gerudo Valley spectrogram">
+    </div>
+
+    <div class="feature-row">
+      <h4>MFCCs (<a class="csv-link" href="data/week9_gerudovalley_mfccs_cvsfile.csv" target="_blank" rel="noopener noreferrer">download CSV</a>)</h4>
+      <img class="analysis-img zoomable" src="data/week9_gerudovalley_mfccs_image.png" alt="Gerudo Valley MFCCs">
+    </div>
+
+    <div class="feature-row">
+      <h4>Chromagram (<a class="csv-link" href="data/week9_gerudovalley_chromagram_cvsfile.csv" target="_blank" rel="noopener noreferrer">download CSV</a>)</h4>
+      <img class="analysis-img zoomable" src="data/week9_gerudovalley_chromagram_imagefile.png" alt="Gerudo Valley chromagram">
+    </div>
+  </article>
 
 
 </section>
