@@ -174,7 +174,7 @@
 
         h2 {
             font-size: 2rem;
-			margin-top: 30px
+			margin-top: 40px
             margin-bottom: 20px;
         }
      
@@ -477,17 +477,17 @@
 
       <!-- Track 2 -->
       <div class="track-column">
-        <div class="track-header">Kakariko Village</div>
+        <div class="track-header">Midna’s Lament</div>
         <img src="data/week9__midnaslament_spectrogram_histogram.png"
-             alt="Spectrogram histograms for Kakariko Village"
+             alt="Spectrogram histograms for Midna’s Lament"
              class="histogram-img">
       </div>
 
       <!-- Track 3 -->
       <div class="track-column">
-        <div class="track-header">Midna’s Lament</div>
+        <div class="track-header">Kakariko Village</div>
         <img src="data/week9_kakarikovillagenight_spectrogram_histogram.png"
-             alt="Spectrogram histograms for Midna's Lament"
+             alt="Spectrogram histograms for Kakariko Village"
              class="histogram-img">
       </div>
 
@@ -510,17 +510,17 @@
 
       <!-- Track 2 -->
       <div class="track-column">
-        <div class="track-header">Kakariko Village</div>
+        <div class="track-header">Midna’s Lament</div>
         <img src="data/week9__midnaslament_mfccs_histogram.png"
-             alt="MFCC histograms for Kakariko Village"
+             alt="MFCC histograms for Midna’s Lament"
              class="histogram-img">
       </div>
 
       <!-- Track 3 -->
       <div class="track-column">
-        <div class="track-header">Midna’s Lament</div>
+        <div class="track-header">Kakariko Village</div>
         <img src="data/week9_kakarikovillagenight_mfccs_histogram.png"
-             alt="MFCC histograms for Midna's Lament"
+             alt="MFCC histograms for Kakariko Village"
              class="histogram-img">
       </div>
 
@@ -544,17 +544,17 @@
 
       <!-- Track 2 -->
       <div class="track-column">
-        <div class="track-header">Kakariko Village</div>
+        <div class="track-header">Midna’s Lament</div>
         <img src="data/week9_midnaslament_chromagram_histogram.png"
-             alt="Chromagrams histograms for Kakariko Village"
+             alt="Chromagrams histograms for Midna’s Lament"
              class="histogram-img">
       </div>
 
       <!-- Track 3 -->
       <div class="track-column">
-        <div class="track-header">Midna’s Lament</div>
+        <div class="track-header">Kakariko Village</div>
         <img src="data/week9_kakarikovillagenight_chromagram _histogram.png"
-             alt="Chromagrams histograms for Midna's Lament"
+             alt="Chromagrams histograms for Kakariko Village"
              class="histogram-img">
       </div>
 
@@ -564,35 +564,22 @@
 	
   <h2>Task 3 – Comparing histograms and discussion on whether the histograms capture significant differences between the tracks</h2>
   
-  <h3>MFCC Histogram Comparison (max 300 words)</h3>
+  <h3>MFCC Histogram Comparison</h3>
 
-  <p>
-    The MFCC histograms provide a quantitative view of how timbre differs across the three
-    tracks. <strong>Gerudo Valley</strong>, which features prominent guitar and brass, shows
-    relatively broad MFCC distributions, especially in the lower-order coefficients. These
-    wider, multi-peaked shapes indicate a bright spectrum with strong transients and rich
-    harmonic content, consistent with its energetic, rhythmic texture.
-  </p>
-  <p>
-    In contrast, <strong>Kakariko Village</strong> has smoother, more tightly concentrated
-    MFCC histograms. Many coefficients cluster around a single dominant region, reflecting
-    its warmer, mid-range instrumentation and more relaxed rhythmic profile. This matches
-    the listening impression of the track as gentle and folk-like rather than percussive.
-  </p>
-  <p>
-    <strong>Midna’s Lament</strong> exhibits the most distinct pattern. The lower MFCC
-    coefficients display clear peaks associated with soft piano fundamentals, while higher
-    coefficients remain comparatively small, indicating a darker, less noisy timbre. This
-    aligns with the track’s intimate, melancholic character and sparse arrangement.
-  </p>
-  <p>
-    Overall, the MFCC histograms capture differences that are clearly audible: bright and
-    aggressive for Gerudo Valley, smooth and centred for Kakariko Village, and subdued for
-    Midna’s Lament. The separations between these histogram shapes suggest that MFCC-based
-    features could be used to discriminate between tracks or to support automatic
-    classification within a larger Zelda soundtrack corpus.
-  </p>
-</div>	
+  		<p>Mel-Frequency Cepstral Coefficients (MFCCs) offer a compact representation of timbre, making them particularly useful for comparing the spectral character of different recordings. When examining the MFCC histograms for Gerudo Valley, Midna’s Lament, and Kakariko Village (Night), several differences emerged that aligned with what we would expect when listening to the tracks.
+		</p>
+
+		<p>Gerudo Valley shows MFCC histograms with broader spreads and more multi-modal peaks in the first few coefficients (especially MFCC 0–5). This reflects the piece’s instrumentation — prominent guitars, brass, and percussion — resulting in a bright, percussive timbre with stronger high-frequency content. The histogram variation suggests sharper onsets and more complex harmonic textures.
+		</p>
+
+		<p>In contrast, Kakariko Village (Night) exhibits MFCC distributions that are narrower, smoother, and more centred around mid-range values. This corresponds to its calmer acoustic palette, dominated by soft plucked strings and gentle pads. The histograms show fewer extreme values, suggesting reduced spectral brightness and more stable timbral consistency across the track.
+		</p>
+
+		<p>Midna’s Lament produces histograms with much tighter clustering in most coefficients, especially MFCC 1–10, reflecting its sparse instrumentation—mainly piano and soft strings. The distributions show very little activity in the higher spectral regions, consistent with the track’s subdued emotional tone and minimalistic texture. Some coefficients show nearly symmetrical Gaussian shapes, indicating stable, sustained tones rather than rhythmic or percussive elements.
+		</p>
+
+		<p>Overall, the histograms captured clear, quantifiable differences in timbre between the tracks. These contrast strongly across the three soundtracks, each with different features. These results align with the expected listening experience and demonstrate that MFCCs can effectively differentiate musical atmosphere and instrumentation based solely on spectral features.
+		</p>	
 	
 </section>
 
