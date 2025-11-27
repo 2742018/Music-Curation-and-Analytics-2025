@@ -219,6 +219,54 @@
     		text-align: center;
     		margin-top: 8px;
   		}
+
+	 	.histogram-wrapper {
+    		background: #02040a;
+    		padding: 20px;
+    		border-radius: 8px;
+    		color: #ffffff;
+    		margin-bottom: 30px;
+  		}
+
+  		.histogram-wrapper h3 {
+    		margin-top: 0;
+ 		}
+
+  		.histogram-grid {
+    		display: flex;
+    		gap: 20px;
+    		justify-content: space-between;
+    		margin-top: 10px;
+  		}
+
+  		.track-column {
+    		flex: 1;
+    		text-align: center;
+  		}
+
+  		.track-header {
+    		background: #0b6fa4;
+    		padding: 10px 8px;
+    		border-radius: 999px;
+    		font-weight: bold;
+    		margin-bottom: 10px;
+    		font-size: 0.9rem;
+  		}
+
+  		.histogram-img {
+    		width: 100%;
+    		border: 2px solid #000000;
+    		background: #ffffff;
+  		}
+
+  		@media (max-width: 900px) {
+    		.histogram-grid {
+      		flex-direction: column;
+    	}
+    		.track-header {
+      		border-radius: 12px;
+    	}
+  		}
 		
 	/* Quick Links Section */
         .quick-links {
@@ -407,12 +455,113 @@
   </p>
 
 
-  <h2>Task 2 – Python Histogram Analysis</h2>
+  <h2>Task 2 – Computing and Visualising Histograms</h2>
   <p>
-    After exporting the spectrogram, MFCC and chroma layers as CSVs, I loaded the data into Python and generated histograms using <code>matplotlib</code>. The histograms allow numerical comparison of the tracks’ spectral and timbral characteristics.
+    For each of my three Zelda-related tracks, I loaded the raw MFCC, chroma, and spectrogram CSV files into Python and computed histograms for each feature dimension. The histograms below allow numerical comparison of the tracks’ spectral and timbral characteristics:
   </p>
 
+<!---------------------- Spectogram HISTOGRAMS -------------------------->
+ <div class="histogram-wrapper">
+    <h3>Computed Spectrograms to Histograms</h3>
 
+    <div class="histogram-grid">
+	
+      <!-- Track 1 -->
+      <div class="track-column">
+        <div class="track-header">Gerudo Valley</div>
+        <img src="data/week9_gerudovalley_spectrogram_histogram.png"
+             alt="Spectrogram histograms for Gerudo Valley"
+             class="histogram-img">
+      </div>
+
+      <!-- Track 2 -->
+      <div class="track-column">
+        <div class="track-header">Kakariko Village</div>
+        <img src="data/week9__midnaslament_spectrogram_histogram.png"
+             alt="Spectrogram histograms for Kakariko Village"
+             class="histogram-img">
+      </div>
+
+      <!-- Track 3 -->
+      <div class="track-column">
+        <div class="track-header">Midna’s Lament</div>
+        <img src="data/week9_kakarikovillagenight_spectrogram_histogram.png"
+             alt="Spectrogram histograms for Midna's Lament"
+             class="histogram-img">
+      </div>
+
+    </div>
+  </div>
+
+  <!---------------------- MFCC HISTOGRAMS -------------------------->
+  <div class="histogram-wrapper">
+    <h3>Computed MFCCs to Histograms</h3>
+
+    <div class="histogram-grid">
+
+      <!-- Track 1 -->
+      <div class="track-column">
+        <div class="track-header">Gerudo Valley</div>
+        <img src="data/week9_gerudovalley_mfccs_histogram.png"
+             alt="MFCC histograms for Gerudo Valley"
+             class="histogram-img">
+      </div>
+
+      <!-- Track 2 -->
+      <div class="track-column">
+        <div class="track-header">Kakariko Village</div>
+        <img src="data/week9__midnaslament_mfccs_histogram.png"
+             alt="MFCC histograms for Kakariko Village"
+             class="histogram-img">
+      </div>
+
+      <!-- Track 3 -->
+      <div class="track-column">
+        <div class="track-header">Midna’s Lament</div>
+        <img src="data/week9_kakarikovillagenight_mfccs_histogram.png"
+             alt="MFCC histograms for Midna's Lament"
+             class="histogram-img">
+      </div>
+
+    </div>
+  </div>
+
+
+<!---------------------- Chromagrams HISTOGRAMS -------------------------->
+
+ <div class="histogram-wrapper">
+    <h3>Computed Chromagrams to Histograms</h3>
+
+    <div class="histogram-grid">
+
+      <!-- Track 1 -->
+      <div class="track-column">
+        <div class="track-header">Gerudo Valley</div>
+        <img src="data/week9_gerudovalley_chromagram_histogram.png"
+             alt="Chromagrams histograms for Gerudo Valley"
+             class="histogram-img">
+      </div>
+
+      <!-- Track 2 -->
+      <div class="track-column">
+        <div class="track-header">Kakariko Village</div>
+        <img src="data/week9_midnaslament_chromagram_histogram.png"
+             alt="Chromagrams histograms for Kakariko Village"
+             class="histogram-img">
+      </div>
+
+      <!-- Track 3 -->
+      <div class="track-column">
+        <div class="track-header">Midna’s Lament</div>
+        <img src="data/week9_kakarikovillagenight_chromagram _histogram.png"
+             alt="Chromagrams histograms for Midna's Lament"
+             class="histogram-img">
+      </div>
+
+    </div>
+  </div>
+
+	
 	
 </section>
 
