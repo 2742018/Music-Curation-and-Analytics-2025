@@ -302,7 +302,7 @@
    
 <section class="hero">
     <div>
-      <h1>Week 10 – </h1>
+      <h1>Week 10 – Audio Similarity and Transcription</h1>
         <p>???</p>
           <a href="#content" class="cta-btn">Scroll Down to Explore Week 10 IL Tasks</a>
     </div>
@@ -312,8 +312,60 @@
 <!-- Week 10 Content Section -->
 <section id="content" class="container">
 
+<div class="section">
+  <h2>Task 1 – Chroma-Based Similarity Between Tracks</h2>
 
+  <p>
+    For this task, I reused the Jupyter notebook from the group lab and adapted it to my own theme. I replaced the original <em>country</em> category with an <strong>orchestral</strong> category and changed tracks 7–9 so that they are <strong>Zelda soundtrack cues</strong> taken from my Week 9 dataset (e.g. <em>Gerudo Valley</em>, <em>Midna’s Lament</em>, and <em>Kakariko Village (Night)</em>). For each track, I extracted <strong>chroma</strong> features in SonicVisualizer, exported them as CSV, and used the notebook to compute summary statistics and a similarity matrix.
+  </p>
 
+  <h3>Chroma Features for All Tracks</h3>
+  <div class="image-block">
+    <img src="data/week10_chroma_panels.png"
+         alt="Chroma heatmaps for all 10 tracks"
+         class="analysis-img">
+  </div>
+  	<p>
+    The panel of chroma heatmaps above shows how pitch-class energy is distributed over time for each track. Track 7 appears dense and noisy, with energy distributed broadly across pitch classes—evidence of its continuous harmonic texture and lack of discrete chord changes. Track 8 shows repeating horizontal bands, revealing recurring harmonic material that cycles throughout the track. Track 9 features more vertical streaks than the others, indicating more explicit chord articulations and a more rhythmically driven harmonic structure. In contrast, some of the other tracks show more diffuse patterns.
+  	</p>
+
+  <h3>Average Chroma Profiles by Track</h3>
+  <div class="image-block">
+    <img src="data/week10_chroma_means.png"
+         alt="Average chroma levels for each track"
+         class="analysis-img">
+  </div>
+  <p>
+    Averaging the chroma values over time yields a pitch-class profile for each track. Track 7 displays an unusually flat chroma profile, indicating that no single pitch class dominates the track. This aligns with its atmospheric Zelda-style soundtrack, which relies more on evolving textures than on clear harmonic centres. Track 8, by contrast, shows distinct peaks around C, E, and B, reflecting a more stable minor-key centre characteristic of emotional Zelda themes. Track 9 presents a scattered pattern of chroma values, suggesting more frequent harmonic movement and subtle modal shifts throughout the piece.
+  </p>
+
+  <!-- Scatter of C vs A occurrences -->
+  <h3>Pitch-Class Scatter by Category</h3>
+  <div class="image-block">
+    <img src="data/week10_scatter_CA.png"
+         alt="Scatter plot of relative C vs A occurrence by category"
+         class="analysis-img">
+  </div>
+  	<p>
+    This scatter plot compares how often the pitch classes C and A occur across the ten tracks. The “orchestral” points sit between the more varied “classical” group and the strongly tonal “rock” group. This shows that the Zelda tracks rely on moderate, balanced pitch-class usage typical of atmospheric orchestral music rather than the strong tonal centres seen in rock.
+  	</p>
+
+  <!-- Final similarity matrix -->
+  <h3>Chroma-Based Similarity Matrix</h3>
+  <div class="image-block">
+    <img src="data/week10_similarity_matrix.png"
+         alt="Chroma-based similarity matrix for all tracks"
+         class="analysis-img">
+  </div>
+  	<p>
+	The similarity matrix visualises how close each track is to the others based on chroma features. Darker colours indicate higher similarity. Tracks 7–9 (the Zelda soundtracks) cluster closely together, showing that they share strong harmonic and timbral characteristics. They appear clearly separated from the other tracks, which confirms their distinctive musical identity within the dataset. This shows that the Zelda orchestral-style tracks tend to share instrumentation, harmonic language, and timbral qualities. In contrast, tracks outside the Zelda theme show greater stylistic and harmonic diversity, reflected in broader variation in the matrix.
+  	</p>
+</div>
+
+  	<p style="margin-top:16px;">
+    The <code>.ipynb</code> file along with all the images and CSVs can be found  in the 'data' folder: <a href="https://github.com/2742018/Music-Curation-and-Analytics-2025/tree/dbb3a3667b459488e6092ec16c3b1873fc2b5439/data" target="_blank" rel="noopener noreferrer">My Github 'data' Repository.</a>
+  	</p>
+	
 </section>
 
 <!-- Quick Links to Weekly Analysis -->
