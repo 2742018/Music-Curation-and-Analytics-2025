@@ -220,6 +220,35 @@
     		text-align: center;
     		margin-top: 8px;
   		}
+
+		.image-row {
+    		display: flex;
+    		justify-content: center;
+    		align-items: flex-start;
+    		gap: 40px;
+    		margin: 40px 0;
+    		flex-wrap: wrap;
+		}
+
+		.image-col {
+    		max-width: 45%;
+    		min-width: 300px;
+    		text-align: center;
+		}
+
+		.image-col img {
+    		width: 100%;
+    		height: auto;
+    		border-radius: 12px;
+    		box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+		}
+
+		.caption {
+    		margin-top: 10px;
+    		font-size: 1rem;
+    		color: #555;
+    		font-family: 'Helvetica', sans-serif;
+		}
 		
 	/* Quick Links Section */
         .quick-links {
@@ -372,8 +401,9 @@
   	</p>
 
 	
-  <p style="margin-top:40px;">
+  <h2 style="margin-top:40px;">
   <h2>Task 2: Transcription Comparison</h2>
+  </h2>
 
   	<p>
     This task revisits my Week 2 score for <em>Great Fairy Fountain</em>. I exported the MuseScore file as a WAV, opened it in SonicVisualizer, ran the automatic note transcription, converted the result to MIDI, and uploaded it back to MuseScore. The images below compare my original notation with the transcription generated purely from audio.
@@ -382,18 +412,21 @@
   <figure class="task-image-block">
     <img src="data/forweek10_imagever_labworkweek2task_zelda-great-fairy-fountain-piano-etude.png" alt="Original MuseScore engraving, page 1">
     <figcaption>
-      Original MuseScore engraving of my corrected piano arrangement (pages 1 Only).
+      Original MuseScore engraving of my corrected piano arrangement (pages 1 only).
     </figcaption>
   </figure>
 
-  <figure class="task-image-block">
-    <img src="data/week10_task2_transcription_musescorever_1-1.png" alt="Transcribed score of pg.1, page 1">
-    <img src="data/week10_task2_transcription_musescorever_1-2.png" alt="Transcribed score of pg.1, page 2">
-    <figcaption>
-      Automatic transcription produced from the WAV file via SonicVisualizer (audio → MIDI → MuseScore).
-    </figcaption>
-  </figure>
-  	
+	<div class="image-row">
+    <div class="image-col">
+        <img src="data/week10_task2_transcription_musescorever_1-1.png" alt="Transcribed score of pg.1, page 1">
+        <p class="caption">Automatic transcription produced from the WAV file via SonicVisualizer (audio → MIDI → MuseScore) (page 1).</p>
+    </div>
+
+    <div class="image-col">
+        <img src="data/week10_task2_transcription_musescorever_1-2.png" alt="Transcribed score of pg.1, page 1">
+        <p class="caption">Automatic transcription produced from the WAV file via SonicVisualizer (page 2).</p>
+    </div>
+	</div>
 
 	<p>
 	The SonicVisualizer transcription captures the broad melodic outline of <em>Great Fairy Fountain Etude</em>, but a closer comparison reveals significant losses in harmonic, rhythmic, and expressive detail. The original score features flowing left-hand arpeggios, layered inner voices, and expressive markings that shape the piece’s ethereal character. In contrast, the transcription tends to flatten these textures. Rapid arpeggiated figures often collapse into single-note pulses, and the harmonic support that defines the piece’s shimmering atmosphere is largely absent.
