@@ -3,7 +3,7 @@
 
 This repository presents an academic and creative portfolio exploring music data curation and analysis within the context of Koji Kondo’s compositions for *The Legend of Zelda* series.  
 
-It was created as part of the **Music Curation and Analytics** coursework and published via **GitHub Pages**.
+This repository contains the supporting materials for my portfolio submitted for the Music Curation and Analytics module. It includes encoded musical data, audio analysis outputs, MEI metadata files, and Python-based analytical work. The contents here function as the technical backbone to the curated portfolio hosted on GitHub Pages.
 
 ---
 ## Portfolio Website
@@ -30,3 +30,8 @@ Each weekly page includes:
 - Written analytical commentary  
 - Linked datasets and sources  
 - Visualisations or audio references (where applicable)
+
+## Navigating the Repository
+
+- Use the Portfolio Website for contextual explanations.
+- Refer to data/ folder for encoded files, images and audios.
