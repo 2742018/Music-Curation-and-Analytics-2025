@@ -6,6 +6,13 @@ This repository presents an academic and creative portfolio exploring music data
 It was created as part of the **Music Curation and Analytics** coursework and published via **GitHub Pages**.
 
 ---
+## Portfolio Website
+
+The complete portfolio is available here:
+
+🔗 [2742018 Music Curation and Analytics (MCA) 2025](https://2742018.github.io/Music-Curation-and-Analytics-2025/index.html)
+
+This website includes all weekly data, images, and analysis outputs.
 
 ## Website Structure
 
