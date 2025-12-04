@@ -12,15 +12,20 @@ The complete portfolio is available here:
 
 🔗 [2742018 Music Curation and Analytics (MCA) 2025](https://2742018.github.io/Music-Curation-and-Analytics-2025/index.html)
 
-This website includes all weekly data, images, and analysis outputs.
-
+This website contains:
+- All weekly lab tasks (Weeks 1–10)
+- Data visualisations
+- Encoded files rendered with Verovio
+- Analytical commentary  
+- Final reflection / research question essay
+- 
 ## Website Structure
 
 | Section | Description |
-|----------|--------------|
+|--------|-------------|
 | **Home Page** | Overview and entry point to the portfolio. |
-| **Weekly Individual Labwork Tasks (Weeks 1–10)** | Each week explores a different topic in music data collection, visualisation, or analysis. (60%) |
-| **Reflection / Conclusion** | A written essay/analysis that aims to answer the question: 'Given what you now know about music data and analysis, what is a research question you would like to answer?' (40%)|
+| **Weekly Individual Labwork Tasks (Weeks 1–10)** | Weekly explorations of music encoding, metadata, audio analysis, feature extraction, and similarity metrics. *(60%)* |
+| **Reflection / Conclusion** | Final essay addressing the question: “Given what you now know about music data and analysis, what is a research question you would like to answer?” *(40%)* |
 
 ---
 
@@ -28,10 +33,24 @@ This website includes all weekly data, images, and analysis outputs.
 
 Each weekly page includes:
 - Written analytical commentary  
-- Linked datasets and sources  
-- Visualisations or audio references (where applicable)
+- Linked datasets and files  
+- Music notation encodings (MEI, MusicXML, MIDI)  
+- Audio analyses (spectrograms, chromagrams, MFCCs)  
+- Python-generated figures (histograms, similarity matrices)
 
 ## Navigating the Repository
 
-- Use the Portfolio Website for contextual explanations.
-- Refer to data/ folder for encoded files, images and audios.
+- Visit the **Portfolio Website** for full context and interpretation.
+- The **data/** folder contains encoded notation files, audio files, and CSV feature extractions.
+- The **html/** directory contains Verovio MEI-rendering tests and metadata demonstrations.
+
+
+---
+
+## Academic Integrity Statement
+
+All analysis, commentary, and encoding in this repository represent my own original work.  
+Any use of AI-assisted tools has been documented in the portfolio.  
+All referenced musical works remain the property of Nintendo and are used for educational purposes only.
+
+
