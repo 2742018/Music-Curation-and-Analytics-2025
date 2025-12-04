@@ -18,7 +18,9 @@ This website contains:
 - Encoded files rendered with Verovio
 - Analytical commentary  
 - Final reflection / research question essay
-- 
+
+---
+
 ## Website Structure
 
 | Section | Description |
@@ -38,12 +40,13 @@ Each weekly page includes:
 - Audio analyses (spectrograms, chromagrams, MFCCs)  
 - Python-generated figures (histograms, similarity matrices)
 
+---
+
 ## Navigating the Repository
 
 - Visit the **Portfolio Website** for full context and interpretation.
 - The **data/** folder contains encoded notation files, audio files, and CSV feature extractions.
 - The **html/** directory contains Verovio MEI-rendering tests and metadata demonstrations.
-
 
 ---
 
