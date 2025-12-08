@@ -46,7 +46,7 @@ Each weekly page includes:
 
 - Visit the **Portfolio Website** for full context and interpretation.
 - The **data/** folder contains all the data used in the portfolio, including encoded notation files, audio files, PNG files, and CSV feature extractions.
-- The **html/** directory contains Verovio MEI-rendering tests and metadata demonstrations.
+- The **.html** files contain the website, Verovio MEI-rendering tests and metadata demonstrations.
 
 ---
 
