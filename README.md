@@ -27,7 +27,6 @@ This website contains:
 |--------|-------------|
 | **Home Page** | Overview and entry point to the portfolio. |
 | **Weekly Individual Labwork Tasks (Weeks 1–10)** | Weekly explorations of music encoding, metadata, audio analysis, feature extraction, and similarity metrics. *(60%)* |
-| **Reflection / Conclusion** | Final essay addressing the question: “Given what you now know about music data and analysis, what is a research question you would like to answer?” *(40%)* |
 
 ---
 
